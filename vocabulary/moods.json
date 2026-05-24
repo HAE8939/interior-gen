@@ -1,0 +1,29 @@
+{
+  "$schema_version": "1.0.0",
+  "category": "moods",
+  "category_zh": "氛围词",
+  "description": "情绪/氛围/质感描述词，作为 Prompt 的'情感 spice'词加入。",
+  "items": [
+    {"id": "cozy", "name_zh": "温馨", "name_en": "cozy", "keywords_en": ["cozy intimate atmosphere", "warm and inviting"], "category": "emotion", "tags": ["warm"]},
+    {"id": "serene", "name_zh": "宁静", "name_en": "serene", "keywords_en": ["serene tranquil atmosphere", "peaceful calm ambiance"], "category": "emotion", "tags": ["calm"]},
+    {"id": "elegant", "name_zh": "优雅", "name_en": "elegant", "keywords_en": ["sophisticated and elegant", "refined elegance"], "category": "emotion"},
+    {"id": "luxurious", "name_zh": "奢华", "name_en": "luxurious", "keywords_en": ["luxurious opulence", "lavish high-end"], "category": "emotion", "tags": ["luxury"]},
+    {"id": "dramatic", "name_zh": "戏剧化", "name_en": "dramatic", "keywords_en": ["dramatic and cinematic", "theatrical mood"], "category": "atmosphere"},
+    {"id": "minimalist", "name_zh": "极简", "name_en": "minimalist", "keywords_en": ["minimalist and uncluttered", "less-is-more ethos"], "category": "atmosphere"},
+    {"id": "playful", "name_zh": "玩味", "name_en": "playful", "keywords_en": ["playful and whimsical", "lighthearted creative"], "category": "emotion"},
+    {"id": "moody", "name_zh": "深沉氛围", "name_en": "moody", "keywords_en": ["moody and atmospheric", "brooding ambiance"], "category": "atmosphere"},
+    {"id": "ethereal", "name_zh": "空灵梦幻", "name_en": "ethereal", "keywords_en": ["ethereal dreamlike", "otherworldly atmosphere"], "category": "atmosphere"},
+    {"id": "warm-inviting", "name_zh": "温暖宜人", "name_en": "warm and inviting", "keywords_en": ["warm and inviting ambiance"], "category": "emotion"},
+    {"id": "fresh-airy", "name_zh": "清新通透", "name_en": "fresh and airy", "keywords_en": ["fresh airy and bright", "breezy open feel"], "category": "atmosphere"},
+    {"id": "lived-in", "name_zh": "生活感", "name_en": "lived-in", "keywords_en": ["lived-in and personal", "authentic everyday details"], "category": "atmosphere"},
+    {"id": "magazine-editorial", "name_zh": "杂志大片感", "name_en": "magazine editorial", "keywords_en": ["magazine editorial quality", "Architectural Digest-style composition", "Kinfolk magazine aesthetic"], "category": "atmosphere", "tags": ["editorial"]},
+    {"id": "tactile-textural", "name_zh": "肌理感", "name_en": "tactile textural", "keywords_en": ["rich tactile textures", "layered material textures"], "category": "texture", "tags": ["material"]},
+    {"id": "patina-aged", "name_zh": "时间感 / 老化美", "name_en": "patina aged", "keywords_en": ["beautiful patina and age", "weathered with character"], "category": "texture", "tags": ["wabi-sabi"]},
+    {"id": "polished-pristine", "name_zh": "精致光洁", "name_en": "polished pristine", "keywords_en": ["polished and pristine", "showroom perfection"], "category": "texture"},
+    {"id": "raw-unfinished", "name_zh": "原始未完成", "name_en": "raw unfinished", "keywords_en": ["raw and unfinished", "industrial raw finish"], "category": "texture", "tags": ["industrial"]},
+    {"id": "zen-meditative", "name_zh": "禅意冥想", "name_en": "zen meditative", "keywords_en": ["zen meditative calm", "monastic stillness"], "category": "emotion", "tags": ["asian"]},
+    {"id": "romantic", "name_zh": "浪漫", "name_en": "romantic", "keywords_en": ["romantic ambiance", "intimate and romantic"], "category": "emotion"},
+    {"id": "futuristic", "name_zh": "未来感", "name_en": "futuristic", "keywords_en": ["futuristic and high-tech", "year 2080 vision"], "category": "atmosphere"},
+    {"id": "vintage-nostalgic", "name_zh": "复古怀旧", "name_en": "vintage nostalgic", "keywords_en": ["vintage and nostalgic", "1970s retro feel"], "category": "atmosphere", "tags": ["retro"]}
+  ]
+}

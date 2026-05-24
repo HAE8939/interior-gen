@@ -1,0 +1,204 @@
+{
+  "$schema_version": "1.0.0",
+  "category": "prompt_templates",
+  "category_zh": "完整 Prompt 模板",
+  "description": "完整 Prompt 模板。用 {{placeholder.field}} 标注占位符，引用其他词库 (如 {{space.name_en}}, {{style.keywords_en}}, {{lighting.keywords_en}})。LLM 在润色阶段会按规则展开。词序规则参考 hashmil/stablediffusion-midjourney-prompts: style → composition → medium → camera → subject → environment → lighting → atmosphere → mood → quality.",
+  "placeholder_syntax": {
+    "single_field": "{{key.field}} — 引用单个字段，如 {{space.name_en}}",
+    "array_join": "{{key.keywords_en|join:', '}} — 数组拼接",
+    "array_random_n": "{{key.keywords_en|random:2}} — 随机选 n 个",
+    "optional_block": "[[...内容...]] — 整段可选块，对应字段为空则整段省略",
+    "freetext": "{{freetext_en}} — 用户自由文本（已由 LLM 译为英文）"
+  },
+  "templates": [
+    {
+      "id": "master-universal",
+      "name_zh": "万能主模板",
+      "name_en": "Master Universal Template",
+      "description_zh": "适用于绝大多数室内设计场景，最稳的默认模板。",
+      "target_models": ["midjourney", "flux", "stable-diffusion", "tongyi-wanxiang", "jimeng"],
+      "structure_zh": "主体类型 → 设计风格 → 空间 → 家具 → 材质 → 配色 → 光线/季节 → 摄影参数 → 构图 → 氛围/画质 → 比例",
+      "template_en": "Interior design photograph of {{space.name_en}}, {{style.keywords_en|join:', '}}, featuring {{furniture.keywords_en|join:', '}}, {{materials.keywords_en|join:', '}} materials, {{colors.keywords_en|join:', '}} color palette, {{lighting.keywords_en|join:', '}}, {{season.keywords_en}} {{weather.keywords_en}}, [[shot on {{camera.body.name_en}} with {{camera.lens.name_en}} at {{camera.aperture.name_en}} ISO {{camera.iso.name_en}}, ]]{{composition.perspective.keywords_en}}, {{composition.shot.keywords_en}}, {{mood.keywords_en|join:', '}}, [[in the style of {{artist.keywords_en}}, ]]{{quality_modifiers.keywords_en|join:', '}}, {{freetext_en}}",
+      "template_midjourney_suffix": " --ar {{ratio.mj_param}} --style raw --v 6.1{{#if negative}} --no {{negative.keywords_en|join:', '}}{{/if}}",
+      "example_output_en": "Interior design photograph of modern minimalist living room with double-height ceiling, japandi style, warm wood tones, low-profile design, featuring oak coffee table, linen sofa, ceramic vase, oak wood, lime wash wall, linen, warm beige and cream palette, soft natural daylight streaming through tall windows, spring morning, shot on Sony A7R V with 24mm wide-angle lens at f/2.8 ISO 200, two-point perspective, wide establishing shot, cozy intimate atmosphere, serene tranquil, in the style of Vincent Van Duysen, photorealistic, 8K UHD resolution, highly detailed, cinematic composition --ar 16:9 --style raw --v 6.1"
+    },
+    {
+      "id": "archviz-photoreal",
+      "name_zh": "建筑可视化（照片级真实）",
+      "name_en": "Architectural Visualization Photoreal",
+      "description_zh": "建筑可视化场景，强化结构准确性和照片真实感。适合提案展示。",
+      "target_models": ["midjourney", "flux", "stable-diffusion"],
+      "structure_zh": "Archviz 主体 → 空间结构 → 风格 → 材质 → 自然光 → 专业相机 → 全局光照 → 比例",
+      "template_en": "Architectural interior photography of {{space.name_en}}, {{style.keywords_en|random:2}}, {{materials.keywords_en|join:', '}} surfaces, {{colors.keywords_en|join:', '}} tones, {{lighting.keywords_en|join:', '}}, shot on {{camera.body.name_en}} with {{camera.lens.name_en}}, {{composition.perspective.keywords_en}}, realistic global illumination, V-Ray architectural render quality, photorealistic, 8K UHD, highly detailed materials, sharp focus, by James McDonald and Joarc Architects, {{freetext_en}}",
+      "template_midjourney_suffix": " --ar {{ratio.mj_param}} --style raw --v 6.1 --no people, blur, distortion",
+      "example_output_en": "Architectural interior photography of double-height modern villa living room, modern minimalist, biophilic design, oak wood flooring, board-formed concrete walls, floor-to-ceiling glass, warm neutrals tones, golden hour sunlight casting long shadows, shot on Canon EOS R5 with 16-35mm ultra wide-angle, two-point perspective, realistic global illumination, V-Ray architectural render quality, photorealistic, 8K UHD, highly detailed materials, sharp focus, by James McDonald and Joarc Architects --ar 16:9 --style raw --v 6.1 --no people, blur, distortion"
+    },
+    {
+      "id": "japandi-residential",
+      "name_zh": "日式侘寂居住空间",
+      "name_en": "Japandi / Wabi-Sabi Residential",
+      "description_zh": "日式 + 北欧融合风（Japandi）或侘寂风住宅。强调材质质感、自然光、安静氛围。",
+      "target_models": ["midjourney", "flux", "tongyi-wanxiang"],
+      "structure_zh": "侘寂/Japandi 主体 → 自然材质 → 柔和自然光 → 浅景深 → 禅意氛围",
+      "template_en": "Serene interior photograph of {{space.name_en}}, Japandi minimalism, wabi-sabi aesthetic, {{materials.keywords_en|join:', '}}, raw natural textures, {{furniture.keywords_en|random:3}}, muted earthy color palette of warm beige and clay tones, soft diffused natural daylight through paper screens, {{composition.perspective.keywords_en}}, shallow depth of field, in the style of Axel Vervoordt and Vincent Van Duysen, photorealistic, magazine editorial quality, Kinfolk magazine aesthetic, highly detailed, {{freetext_en}}",
+      "template_midjourney_suffix": " --ar {{ratio.mj_param}} --style raw --v 6.1 --no clutter, harsh shadows, oversaturated",
+      "example_output_en": "Serene interior photograph of zen tea room, Japandi minimalism, wabi-sabi aesthetic, weathered oak wood, lime-washed plaster wall, raw linen, tatami mat, raw natural textures, low wooden tea table, floor cushion, ceramic vessel, muted earthy color palette of warm beige and clay tones, soft diffused natural daylight through paper screens, eye-level perspective, shallow depth of field, in the style of Axel Vervoordt and Vincent Van Duysen, photorealistic, magazine editorial quality, Kinfolk magazine aesthetic, highly detailed --ar 4:5 --style raw --v 6.1 --no clutter, harsh shadows, oversaturated"
+    },
+    {
+      "id": "luxury-villa-evening",
+      "name_zh": "夜景奢华别墅",
+      "name_en": "Luxury Villa Evening",
+      "description_zh": "豪华别墅夜景灯光场景。室内暖光 + 室外蓝调时刻。",
+      "target_models": ["midjourney", "flux"],
+      "structure_zh": "奢华主体 → 大尺度空间 → 夜景灯光 → 室外蓝调 → 电影感",
+      "template_en": "Luxury interior photograph of {{space.name_en}}, modern luxury, quiet luxury aesthetic, {{materials.keywords_en|join:', '}} surfaces including book-matched marble and brushed brass accents, {{furniture.keywords_en|random:3}}, deep jewel tones with warm metallic highlights, evening interior lighting with warm pendant glow contrasting against blue hour sky outside floor-to-ceiling windows, dramatic chiaroscuro lighting, shot on Hasselblad X2D with 35mm at f/2.8, {{composition.perspective.keywords_en}}, cinematic composition, in the style of Joseph Dirand and Kelly Wearstler, photorealistic hyperrealism, 8K UHD, magazine editorial quality Architectural Digest, {{freetext_en}}",
+      "template_midjourney_suffix": " --ar {{ratio.mj_param}} --style raw --v 6.1",
+      "example_output_en": "Luxury interior photograph of penthouse living room with city view, modern luxury, quiet luxury aesthetic, book-matched marble, brushed brass, walnut wood, velvet upholstery surfaces, sculptural sofa, marble coffee table, statement chandelier, deep jewel tones with warm metallic highlights, evening interior lighting with warm pendant glow contrasting against blue hour sky outside floor-to-ceiling windows, dramatic chiaroscuro lighting, shot on Hasselblad X2D with 35mm at f/2.8, one-point perspective, cinematic composition, in the style of Joseph Dirand and Kelly Wearstler, photorealistic hyperrealism, 8K UHD, magazine editorial quality Architectural Digest --ar 16:9 --style raw --v 6.1"
+    },
+    {
+      "id": "new-chinese-residential",
+      "name_zh": "新中式住宅",
+      "name_en": "New Chinese Residential",
+      "description_zh": "新中式风格，国内市场最常用模板。融合现代极简和传统中式元素。",
+      "target_models": ["tongyi-wanxiang", "jimeng", "midjourney", "flux"],
+      "structure_zh": "新中式主体 → 传统材料现代化 → 留白构图 → 茶/书/禅元素 → 柔和东方光",
+      "template_en": "Contemporary Chinese interior design photograph of {{space.name_en}}, new Chinese minimalism (新中式), modern reinterpretation of traditional Chinese aesthetics, {{materials.keywords_en|join:', '}} with subtle wood-grain detailing and stone accents, {{furniture.keywords_en|random:3}} with refined silhouettes inspired by Ming dynasty furniture, ink-wash inspired neutral palette of soft beige cream and charcoal, soft eastern morning light through silk-textured screens casting gentle shadows, {{composition.perspective.keywords_en}}, generous negative space following Chinese painting principles, photorealistic, magazine editorial quality, highly detailed, {{freetext_en}}",
+      "template_midjourney_suffix": " --ar {{ratio.mj_param}} --style raw --v 6.1 --no cluttered, oversaturated",
+      "example_output_en": "Contemporary Chinese interior design photograph of tea room and study, new Chinese minimalism (新中式), modern reinterpretation of traditional Chinese aesthetics, dark walnut wood, raw stone, rice paper screen, raw silk with subtle wood-grain detailing and stone accents, low wooden tea table, Ming-inspired armchair, ink painting scroll with refined silhouettes inspired by Ming dynasty furniture, ink-wash inspired neutral palette of soft beige cream and charcoal, soft eastern morning light through silk-textured screens casting gentle shadows, eye-level perspective, generous negative space following Chinese painting principles, photorealistic, magazine editorial quality, highly detailed --ar 3:2 --style raw --v 6.1 --no cluttered, oversaturated"
+    },
+    {
+      "id": "commercial-cafe-restaurant",
+      "name_zh": "商业空间 · 咖啡馆/餐厅",
+      "name_en": "Commercial Cafe / Restaurant",
+      "description_zh": "商业空间生图模板，适合咖啡馆、餐厅、买手店等氛围营造。",
+      "target_models": ["midjourney", "flux", "tongyi-wanxiang"],
+      "structure_zh": "商业主体 → 风格特征 → 业态家具 → 招牌饮品/产品 → 顾客活动暗示（不显示人物）→ 氛围光",
+      "template_en": "Interior photograph of {{space.name_en}}, {{style.keywords_en|join:', '}}, {{materials.keywords_en|join:', '}}, custom millwork bar counter, {{furniture.keywords_en|random:3}}, {{colors.keywords_en|join:', '}} color story, {{lighting.keywords_en|join:', '}}, warm ambient pendant lighting over counter, {{composition.perspective.keywords_en}}, {{mood.keywords_en|random:2}}, shot on {{camera.body.name_en}}, photorealistic, professional interior photography, highly detailed signage and product display, {{freetext_en}}",
+      "template_midjourney_suffix": " --ar {{ratio.mj_param}} --style raw --v 6.1 --no people, customers",
+      "example_output_en": "Interior photograph of specialty coffee shop, industrial loft style, modern minimalist, exposed brick wall, polished concrete floor, matte black metal, walnut wood, custom millwork bar counter, leather bar stool, brass pendant lamp, ceramic mug, warm neutrals and forest green color story, soft afternoon natural light through large factory windows, warm ambient pendant lighting over counter, eye-level perspective, cozy intimate atmosphere, tactile textural, shot on Fujifilm GFX 100S, photorealistic, professional interior photography, highly detailed signage and product display --ar 3:2 --style raw --v 6.1 --no people, customers"
+    },
+    {
+      "id": "modern-office-workspace",
+      "name_zh": "现代办公空间",
+      "name_en": "Modern Office / Workspace",
+      "description_zh": "现代办公室、联合办公空间、CEO 办公室等场景。",
+      "target_models": ["midjourney", "flux", "tongyi-wanxiang"],
+      "structure_zh": "办公主体 → 现代/科技/极简风格 → 协作家具 → 自然光+办公照明 → 专业感",
+      "template_en": "Modern workplace interior photograph of {{space.name_en}}, {{style.keywords_en|join:', '}}, {{materials.keywords_en|join:', '}}, {{furniture.keywords_en|random:3}}, ergonomic design, {{colors.keywords_en|join:', '}}, abundant natural daylight from floor-to-ceiling windows complemented by indirect LED ceiling lighting, biophilic touches with potted plants, {{composition.perspective.keywords_en}}, clean lines and uncluttered surfaces, shot on {{camera.body.name_en}} with {{camera.lens.name_en}}, photorealistic, professional architectural photography, highly detailed, {{freetext_en}}",
+      "template_midjourney_suffix": " --ar {{ratio.mj_param}} --style raw --v 6.1 --no people, clutter",
+      "example_output_en": "Modern workplace interior photograph of open-plan office, modern minimalist, Scandinavian, oak wood, white plaster wall, brushed aluminum, glass partition, height-adjustable desk, mesh task chair, modular meeting pod, ergonomic design, fresh white grey and accent sage palette, abundant natural daylight from floor-to-ceiling windows complemented by indirect LED ceiling lighting, biophilic touches with potted plants, two-point perspective, clean lines and uncluttered surfaces, shot on Sony A7R V with 16-35mm wide angle, photorealistic, professional architectural photography, highly detailed --ar 16:9 --style raw --v 6.1 --no people, clutter"
+    },
+    {
+      "id": "bedroom-cozy",
+      "name_zh": "温馨卧室",
+      "name_en": "Cozy Bedroom",
+      "description_zh": "温馨主卧/客卧场景。强调舒适感、柔和光线、亲密氛围。",
+      "target_models": ["midjourney", "flux", "tongyi-wanxiang", "jimeng"],
+      "structure_zh": "卧室主体 → 风格 → 床品材质 → 床头柜+灯 → 柔光晨光/暖光 → 亲密氛围",
+      "template_en": "Interior photograph of {{space.name_en}}, {{style.keywords_en|join:', '}}, plush king-size bed with crumpled linen bedding, {{furniture.keywords_en|random:3}}, layered textures of {{materials.keywords_en|join:', '}}, {{colors.keywords_en|join:', '}} palette, {{lighting.keywords_en|join:', '}}, soft morning light filtering through sheer linen curtains, {{composition.perspective.keywords_en}}, shallow depth of field, cozy intimate atmosphere, warm and inviting, lived-in and personal, shot on {{camera.body.name_en}}, photorealistic, magazine editorial quality, {{freetext_en}}",
+      "template_midjourney_suffix": " --ar {{ratio.mj_param}} --style raw --v 6.1",
+      "example_output_en": "Interior photograph of master bedroom, modern farmhouse, Japandi influences, plush king-size bed with crumpled linen bedding, oak nightstand, ceramic table lamp, woven jute rug, layered textures of oak wood, raw linen, boucle wool, terracotta, warm beige and cream palette, soft morning sun streaming light, soft morning light filtering through sheer linen curtains, eye-level perspective, shallow depth of field, cozy intimate atmosphere, warm and inviting, lived-in and personal, shot on Canon EOS R5 with 50mm prime, photorealistic, magazine editorial quality --ar 4:5 --style raw --v 6.1"
+    },
+    {
+      "id": "kitchen-modern",
+      "name_zh": "现代开放式厨房",
+      "name_en": "Modern Open Kitchen",
+      "description_zh": "开放式厨房+岛台场景。强调材质细节、收纳系统、烹饪生活感。",
+      "target_models": ["midjourney", "flux", "tongyi-wanxiang"],
+      "structure_zh": "厨房主体 → 风格 → 岛台/橱柜材质 → 电器细节 → 配色 → 自然光+功能照明",
+      "template_en": "Interior photograph of {{space.name_en}}, {{style.keywords_en|join:', '}}, large central kitchen island with waterfall edge, {{materials.keywords_en|join:', '}} cabinetry, integrated premium appliances, {{colors.keywords_en|join:', '}} palette, bright natural daylight from skylight and side windows, under-cabinet task lighting, {{composition.perspective.keywords_en}}, fresh greens and bowl of fruit on counter for life accent, shot on {{camera.body.name_en}} with {{camera.lens.name_en}}, photorealistic, magazine editorial quality, highly detailed material textures, {{freetext_en}}",
+      "template_midjourney_suffix": " --ar {{ratio.mj_param}} --style raw --v 6.1",
+      "example_output_en": "Interior photograph of open-plan kitchen, contemporary minimalist, large central kitchen island with waterfall edge, white quartz countertop, oak veneer, brushed brass hardware cabinetry, integrated premium appliances, warm white and oak tones palette, bright natural daylight from skylight and side windows, under-cabinet task lighting, two-point perspective, fresh greens and bowl of fruit on counter for life accent, shot on Fujifilm GFX 100S with 32mm, photorealistic, magazine editorial quality, highly detailed material textures --ar 16:9 --style raw --v 6.1"
+    },
+    {
+      "id": "bathroom-spa",
+      "name_zh": "酒店级 SPA 卫浴",
+      "name_en": "Spa-style Bathroom",
+      "description_zh": "酒店式 SPA 风格卫浴空间。强调材质（石/木/铜）、自然光、宁静感。",
+      "target_models": ["midjourney", "flux", "tongyi-wanxiang"],
+      "structure_zh": "卫浴主体 → SPA/酒店风格 → 浴缸/淋浴 → 石材+木质 → 自然光天井 → 宁静氛围",
+      "template_en": "Interior photograph of {{space.name_en}}, hotel spa style, {{style.keywords_en|random:2}}, freestanding stone bathtub, walk-in rain shower, {{materials.keywords_en|join:', '}}, {{colors.keywords_en|join:', '}} palette, soft natural daylight from clerestory window or skylight, candles and folded white linen towels, {{composition.perspective.keywords_en}}, zen meditative calm, serene tranquil atmosphere, shot on {{camera.body.name_en}}, photorealistic, magazine editorial quality, highly detailed stone texture and water reflections, {{freetext_en}}",
+      "template_midjourney_suffix": " --ar {{ratio.mj_param}} --style raw --v 6.1",
+      "example_output_en": "Interior photograph of master bathroom, hotel spa style, modern luxury, Japandi minimalism, freestanding stone bathtub, walk-in rain shower, travertine stone, teak wood, brushed brass, frosted glass, warm stone and cream palette, soft natural daylight from clerestory window or skylight, candles and folded white linen towels, eye-level perspective, zen meditative calm, serene tranquil atmosphere, shot on Hasselblad X2D, photorealistic, magazine editorial quality, highly detailed stone texture and water reflections --ar 4:5 --style raw --v 6.1"
+    },
+    {
+      "id": "hotel-lobby-grand",
+      "name_zh": "酒店大堂 / 奢华公共空间",
+      "name_en": "Hotel Lobby Grand Space",
+      "description_zh": "大尺度奢华公共空间。酒店大堂、会所、艺术画廊等。",
+      "target_models": ["midjourney", "flux"],
+      "structure_zh": "公共大空间 → 奢华风格 → 大型雕塑装置 → 戏剧化照明 → 仰视/对称构图",
+      "template_en": "Grand interior photograph of {{space.name_en}}, ultra-luxury hospitality design, {{style.keywords_en|random:2}}, double-height atrium with sculptural staircase, statement art installation, {{materials.keywords_en|join:', '}}, deep saturated jewel tones with metallic gold accents, dramatic uplighting and cascading crystal chandelier, {{composition.perspective.keywords_en}}, symmetrical composition, in the style of Joseph Dirand and Candida Höfer photography, cinematic composition, photorealistic, magazine editorial quality, 8K UHD, award-winning interior photography, highly detailed, {{freetext_en}}",
+      "template_midjourney_suffix": " --ar {{ratio.mj_param}} --style raw --v 6.1",
+      "example_output_en": "Grand interior photograph of luxury hotel lobby, ultra-luxury hospitality design, modern luxury, Art Deco influences, double-height atrium with sculptural staircase, statement art installation, book-matched marble, polished brass, walnut wood, velvet upholstery, deep saturated jewel tones with metallic gold accents, dramatic uplighting and cascading crystal chandelier, one-point perspective, symmetrical composition, in the style of Joseph Dirand and Candida Höfer photography, cinematic composition, photorealistic, magazine editorial quality, 8K UHD, award-winning interior photography, highly detailed --ar 16:9 --style raw --v 6.1"
+    },
+    {
+      "id": "outdoor-courtyard",
+      "name_zh": "庭院 / 户外景观",
+      "name_en": "Outdoor Courtyard / Landscape",
+      "description_zh": "庭院、露台、阳台、户外泳池景观设计。",
+      "target_models": ["midjourney", "flux", "tongyi-wanxiang"],
+      "structure_zh": "户外主体 → 景观风格 → 植物+水景+硬质铺装 → 自然光时段 → 室内外渗透",
+      "template_en": "Landscape architecture photograph of {{space.name_en}}, {{style.keywords_en|random:2}}, lush greenery and curated plantings, {{materials.keywords_en|join:', '}} hardscape, water feature reflection pool, {{colors.keywords_en|join:', '}}, {{lighting.keywords_en|join:', '}}, indoor-outdoor flow with sliding glass doors, {{composition.perspective.keywords_en}}, biophilic design, serene tranquil atmosphere, shot on {{camera.body.name_en}} with {{camera.lens.name_en}}, photorealistic, magazine editorial quality, highly detailed foliage, {{freetext_en}}",
+      "template_midjourney_suffix": " --ar {{ratio.mj_param}} --style raw --v 6.1 --no people",
+      "example_output_en": "Landscape architecture photograph of zen courtyard garden, Japanese minimalism, wabi-sabi, lush greenery and curated plantings, natural stone, weathered teak deck, raked gravel hardscape, water feature reflection pool, deep greens and natural stone palette, golden hour soft directional light, indoor-outdoor flow with sliding glass doors, eye-level perspective, biophilic design, serene tranquil atmosphere, shot on Sony A7R V with 24-70mm zoom, photorealistic, magazine editorial quality, highly detailed foliage --ar 3:2 --style raw --v 6.1 --no people"
+    },
+    {
+      "id": "childrens-room",
+      "name_zh": "儿童房 / 亲子空间",
+      "name_en": "Children's Room",
+      "description_zh": "儿童房设计。强调安全、趣味、想象力、明亮配色。",
+      "target_models": ["midjourney", "flux", "tongyi-wanxiang", "jimeng"],
+      "structure_zh": "儿童房主体 → 趣味/北欧/蒙特梭利风格 → 低位家具 → 玩具收纳 → 明亮配色 → 柔和自然光",
+      "template_en": "Interior photograph of {{space.name_en}}, {{style.keywords_en|random:2}}, Montessori-inspired child-height furniture, {{furniture.keywords_en|random:3}}, organized toy storage in woven baskets, {{materials.keywords_en|join:', '}}, soft pastel palette with playful accent colors, bright soft natural daylight through sheer curtains, {{composition.perspective.keywords_en}}, playful and whimsical mood, safe and nurturing atmosphere, photorealistic, magazine editorial quality, highly detailed, {{freetext_en}}",
+      "template_midjourney_suffix": " --ar {{ratio.mj_param}} --style raw --v 6.1 --no clutter",
+      "example_output_en": "Interior photograph of children's bedroom, Scandinavian, modern playful, Montessori-inspired child-height furniture, low wooden bed, kids reading nook, soft play mat, organized toy storage in woven baskets, birch plywood, soft cotton, natural rattan, soft pastel palette with playful accent colors, bright soft natural daylight through sheer curtains, eye-level perspective, playful and whimsical mood, safe and nurturing atmosphere, photorealistic, magazine editorial quality, highly detailed --ar 4:5 --style raw --v 6.1 --no clutter"
+    },
+    {
+      "id": "video-template-bohyun-v4",
+      "name_zh": "视频原模板 · 北玄 v4.0 现代别墅",
+      "name_en": "Original Video Template · BoHyun v4.0 Modern Villa",
+      "description_zh": "完整复刻视频中北玄 v4.0 演示的'现代林间木质别墅'生成模板，用于对标和回归测试。",
+      "target_models": ["midjourney", "flux"],
+      "structure_zh": "主体类型：现代林间木质别墅 → 双层挑高空间 → 木质材料主导 → 落地窗大量自然光 → Hasselblad/Sony 高端相机 → 8K 高清",
+      "template_en": "Interior design photograph of a modern wood-clad villa nestled in a forest, double-height living room with floor-to-ceiling windows, warm oak wood paneling throughout, board-formed concrete fireplace, plush low-profile sectional sofa in oatmeal linen, large jute area rug, sculptural floor lamp, abundant natural daylight pouring through tall windows revealing forest view, comfortable sunlight, spring afternoon, shot on Hasselblad X2D 100C with 38mm lens at f/4 ISO 200, two-point perspective wide shot, cozy intimate atmosphere, biophilic warmth, serene tranquil, in the style of Tadao Ando and Vincent Van Duysen, photorealistic, 8K UHD resolution, highly detailed, cinematic composition, magazine editorial quality Architectural Digest cover",
+      "template_midjourney_suffix": " --ar 16:9 --style raw --v 6.1 --no people, clutter, distortion",
+      "example_output_en": "Same as template_en + suffix"
+    }
+  ],
+  "assembly_rules": {
+    "word_order": [
+      "1. medium/subject_type (Interior design photograph of...)",
+      "2. space (the room type)",
+      "3. style keywords",
+      "4. furniture and key objects",
+      "5. materials",
+      "6. color palette",
+      "7. lighting and time/weather",
+      "8. camera parameters (body + lens + aperture + ISO)",
+      "9. composition/perspective",
+      "10. mood / atmosphere",
+      "11. artist/designer reference (optional)",
+      "12. quality modifiers (always last before suffix)",
+      "13. user freetext (woven into appropriate position by LLM)",
+      "14. midjourney suffix: --ar / --style / --v / --no"
+    ],
+    "length_target_words": "60-120 words for the main prompt body (excluding suffix)",
+    "key_principles": [
+      "Specificity beats verbosity — concrete materials/objects beat vague descriptors",
+      "Lead with subject and style — they anchor the model's interpretation",
+      "Quality modifiers always sit at the tail",
+      "Avoid contradicting modifiers (e.g., minimalist + cluttered)",
+      "For Midjourney: keep total token count under model limit, use --ar suffix correctly",
+      "For Stable Diffusion/Flux: put negative prompts in separate field, not in main prompt",
+      "Reuse signature_colors and signature_materials from style entries when freetext is sparse"
+    ]
+  },
+  "model_specific_notes": {
+    "midjourney": "使用 --ar 比例参数；--no 替代负向词；--style raw 防止过度风格化；--v 6.1 / --v 7 当前主流版本。",
+    "flux": "Flux Pro/Dev 对长 Prompt 友好，可保留全部细节。负向词单独输入字段。",
+    "stable-diffusion": "建议 75 tokens 内或使用 BREAK 语法分段。负向词单独输入字段，全用 global+realism+architecture 三组。",
+    "tongyi-wanxiang": "通义万相中文友好，可直接传中文 Prompt 或英文 Prompt。负向词支持。",
+    "jimeng": "即梦支持中英文，对'室内设计' '现代风格'等中文表达识别极佳，可保留少量中文关键词。"
+  }
+}

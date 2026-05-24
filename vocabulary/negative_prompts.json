@@ -1,0 +1,73 @@
+{
+  "$schema_version": "1.0.0",
+  "category": "negative_prompts",
+  "category_zh": "负向提示词",
+  "description": "负向提示词预设，按场景分组。前端建议默认勾选 'global' 组，其他按需。SD/Flux/通义万相支持负向词，MJ 需用 --no 参数。",
+  "presets": {
+    "global": {
+      "name_zh": "通用负向词（默认）",
+      "description_zh": "适用于所有室内设计生图的基础负向词。",
+      "keywords_en": [
+        "low quality", "low resolution", "blurry", "out of focus", "pixelated",
+        "jpeg artifacts", "noise", "grainy",
+        "watermark", "text", "signature", "logo", "username",
+        "cropped", "cut off", "frame",
+        "ugly", "deformed", "disfigured"
+      ]
+    },
+    "realism": {
+      "name_zh": "真实感强化",
+      "description_zh": "排除非真实风格，确保照片感。",
+      "keywords_en": [
+        "cartoon", "anime", "illustration", "drawing", "painting",
+        "3d render look", "video game graphics", "cgi look",
+        "oversaturated", "overexposed", "washed out", "low contrast",
+        "fake-looking", "plastic-looking"
+      ]
+    },
+    "architecture": {
+      "name_zh": "建筑/空间结构纠错",
+      "description_zh": "排除常见的空间结构错误。",
+      "keywords_en": [
+        "crooked lines", "warped walls", "distorted perspective", "tilted walls",
+        "uneven lighting", "fake reflections", "impossible architecture",
+        "bad perspective", "unrealistic furniture placement",
+        "duplicated objects", "duplicated furniture",
+        "floating objects", "objects clipping through walls",
+        "empty spaces", "missing walls"
+      ]
+    },
+    "common_issues": {
+      "name_zh": "常见瑕疵纠错",
+      "description_zh": "排除 AI 生图常见的奇怪元素。",
+      "keywords_en": [
+        "cluttered interior", "messy",
+        "people", "humans", "hands", "fingers",
+        "extra limbs", "extra fingers",
+        "harsh shadows", "blown highlights",
+        "color banding", "chromatic aberration"
+      ]
+    },
+    "no-people": {
+      "name_zh": "无人空间",
+      "description_zh": "用于纯空间展示，不要任何人物。",
+      "keywords_en": [
+        "people", "humans", "person", "child", "kid", "figure",
+        "hands", "fingers", "body parts",
+        "crowded", "occupied"
+      ]
+    },
+    "no-clutter": {
+      "name_zh": "整洁干净",
+      "description_zh": "确保画面整洁，符合杂志大片标准。",
+      "keywords_en": [
+        "clutter", "mess", "messy",
+        "trash", "garbage",
+        "too many objects", "overflowing shelves",
+        "tangled wires", "visible cables"
+      ]
+    }
+  },
+  "midjourney_format_note": "Midjourney 使用 --no 参数代替负向词。例：--no people, clutter, blur",
+  "stable_diffusion_format_note": "SD/Flux 在负向词输入框直接逗号分隔写入即可。"
+}

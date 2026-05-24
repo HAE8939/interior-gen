@@ -1,0 +1,173 @@
+"use client";
+
+import { Check, ChevronDown, ChevronUp, Eye, EyeOff, FileJson, Loader2, Settings } from "lucide-react";
+import * as React from "react";
+
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useSettings } from "@/lib/settings-context";
+import { cn } from "@/lib/utils";
+
+function StatusPill({ ok, label }: { ok: boolean; label: string }) {
+  return (
+    <span className={cn(
+      "inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-medium",
+      ok
+        ? "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300"
+        : "bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300",
+    )}>
+      {ok
+        ? <Check className="size-2.5" />
+        : <span className="size-2 rounded-full bg-amber-500" />}
+      {label}
+    </span>
+  );
+}
+
+function ApiKeyInput({ value, onChange }: { value: string; onChange: (v: string) => void }) {
+  const [show, setShow] = React.useState(false);
+  return (
+    <div className="relative">
+      <Input
+        type={show ? "text" : "password"}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder="输入 API Key…"
+        className="pr-8 h-8 text-xs font-mono"
+        autoComplete="off"
+      />
+      <button
+        type="button"
+        onClick={() => setShow((v) => !v)}
+        className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+      >
+        {show ? <EyeOff className="size-3.5" /> : <Eye className="size-3.5" />}
+      </button>
+    </div>
+  );
+}
+
+export function ConfigBar() {
+  const { settings, updateLLM, updateImageGen, save, isLLMConfigured, isImageGenConfigured } = useSettings();
+  const [open, setOpen] = React.useState(!isLLMConfigured && !isImageGenConfigured);
+  const [saving, setSaving] = React.useState(false);
+  const [saved, setSaved] = React.useState(false);
+  const [saveError, setSaveError] = React.useState<string | null>(null);
+
+  const handleSave = async () => {
+    setSaving(true);
+    setSaveError(null);
+    setSaved(false);
+    try {
+      await save();
+      setSaved(true);
+      setOpen(false);
+      setTimeout(() => setSaved(false), 2500);
+    } catch (e) {
+      setSaveError(e instanceof Error ? e.message : String(e));
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  return (
+    <div className="border-b border-border/60 bg-card/60 backdrop-blur-sm sticky top-0 z-20">
+      {/* ── Summary bar ── */}
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        className="w-full flex items-center justify-between gap-3 px-6 py-2 hover:bg-accent/30 transition-colors"
+      >
+        <div className="flex items-center gap-2.5">
+          <Settings className="size-3.5 text-muted-foreground" />
+          <span className="text-xs font-medium cn">API 配置</span>
+          <div className="flex items-center gap-1.5">
+            <StatusPill ok={isLLMConfigured} label={isLLMConfigured ? "LLM·已配置" : "LLM·未配置"} />
+            <StatusPill ok={isImageGenConfigured} label={isImageGenConfigured ? "生图·已配置" : "生图·未配置"} />
+          </div>
+        </div>
+        <div className="flex items-center gap-2">
+          {saved && (
+            <span className="text-[10px] text-emerald-600 dark:text-emerald-400 font-medium flex items-center gap-1">
+              <Check className="size-3" />已写入文件
+            </span>
+          )}
+          {open ? <ChevronUp className="size-3.5 text-muted-foreground" /> : <ChevronDown className="size-3.5 text-muted-foreground" />}
+        </div>
+      </button>
+
+      {/* ── Expanded panel ── */}
+      {open && (
+        <div className="px-6 pb-4 pt-1">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* LLM */}
+            <div className="space-y-2.5 rounded-xl border border-border/60 bg-background/60 p-3">
+              <div>
+                <p className="text-xs font-semibold cn">LLM 翻译 / 润色</p>
+                <p className="text-[10px] text-muted-foreground cn mt-0.5">中文自由输入翻译 + Prompt 润色</p>
+              </div>
+              <div className="space-y-1">
+                <Label className="text-[11px] cn">API Key</Label>
+                <ApiKeyInput value={settings.llm.apiKey} onChange={(v) => updateLLM({ apiKey: v })} />
+              </div>
+              <div className="grid grid-cols-2 gap-2">
+                <div className="space-y-1">
+                  <Label className="text-[11px] cn">Base URL</Label>
+                  <Input value={settings.llm.baseUrl} onChange={(e) => updateLLM({ baseUrl: e.target.value })} placeholder="https://api.example.com" className="h-8 text-xs font-mono" />
+                </div>
+                <div className="space-y-1">
+                  <Label className="text-[11px] cn">模型</Label>
+                  <Input value={settings.llm.model} onChange={(e) => updateLLM({ model: e.target.value })} placeholder="deepseek-chat" className="h-8 text-xs font-mono" />
+                </div>
+              </div>
+            </div>
+
+            {/* Image gen */}
+            <div className="space-y-2.5 rounded-xl border border-border/60 bg-background/60 p-3">
+              <div>
+                <p className="text-xs font-semibold cn">生图 / 改图 API</p>
+                <p className="text-[10px] text-muted-foreground cn mt-0.5">支持 GPT-image、Nano banana 等 OpenAI 兼容接口</p>
+              </div>
+              <div className="space-y-1">
+                <Label className="text-[11px] cn">API Key</Label>
+                <ApiKeyInput value={settings.imageGen.apiKey} onChange={(v) => updateImageGen({ apiKey: v })} />
+              </div>
+              <div className="grid grid-cols-2 gap-2">
+                <div className="space-y-1">
+                  <Label className="text-[11px] cn">Base URL</Label>
+                  <Input value={settings.imageGen.baseUrl} onChange={(e) => updateImageGen({ baseUrl: e.target.value })} placeholder="https://api.example.com" className="h-8 text-xs font-mono" />
+                </div>
+                <div className="space-y-1">
+                  <Label className="text-[11px] cn">模型</Label>
+                  <Input value={settings.imageGen.model} onChange={(e) => updateImageGen({ model: e.target.value })} placeholder="gpt-image-2" className="h-8 text-xs font-mono" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-3 flex items-center justify-between gap-3">
+            <p className="text-[11px] text-muted-foreground cn flex items-center gap-1">
+              <FileJson className="size-3 shrink-0" />
+              Key 保存于本地文件 api-config.json，已加入 .gitignore，不会提交到 git。
+            </p>
+            <div className="flex flex-col items-end gap-1 shrink-0">
+              {saveError && (
+                <p className="text-[10px] text-red-600 dark:text-red-400 max-w-[240px] text-right">⚠ {saveError}</p>
+              )}
+              <button
+                type="button"
+                onClick={() => void handleSave()}
+                disabled={saving}
+                className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-4 py-1.5 text-xs font-medium text-primary-foreground hover:bg-primary/90 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+              >
+                {saving
+                  ? <><Loader2 className="size-3.5 animate-spin" />保存中…</>
+                  : <><Check className="size-3.5" />保存配置</>}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

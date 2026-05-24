@@ -1,0 +1,27 @@
+{
+  "$schema_version": "1.0.0",
+  "category": "quality_modifiers",
+  "category_zh": "画质修饰词",
+  "description": "用于提升 AI 生图质量、真实感、专业感的修饰词。建议按 priority 分组，高优先级建议默认勾选。",
+  "items": [
+    {"id": "photorealistic", "name_zh": "照片级真实感", "name_en": "photorealistic", "keywords_en": ["photorealistic", "hyperrealistic", "ultra realistic"], "priority": "high"},
+    {"id": "octane-render", "name_zh": "Octane 渲染感", "name_en": "octane render", "keywords_en": ["octane render", "octane render quality"], "priority": "high", "tags": ["render"]},
+    {"id": "unreal-engine-5", "name_zh": "虚幻引擎 5", "name_en": "Unreal Engine 5", "keywords_en": ["rendered in Unreal Engine 5", "Lumen global illumination"], "priority": "medium", "tags": ["render"]},
+    {"id": "vray-render", "name_zh": "V-Ray 渲染", "name_en": "V-Ray render", "keywords_en": ["V-Ray architectural render", "V-Ray photorealistic"], "priority": "medium", "tags": ["render", "archviz"]},
+    {"id": "8k-uhd", "name_zh": "8K 超清", "name_en": "8K UHD", "keywords_en": ["8K UHD resolution", "ultra high definition"], "priority": "high"},
+    {"id": "highly-detailed", "name_zh": "高细节", "name_en": "highly detailed", "keywords_en": ["highly detailed", "intricate details", "extremely detailed"], "priority": "high"},
+    {"id": "sharp-focus", "name_zh": "锐利对焦", "name_en": "sharp focus", "keywords_en": ["sharp focus", "tack sharp"], "priority": "medium"},
+    {"id": "volumetric-lighting", "name_zh": "体积光", "name_en": "volumetric lighting", "keywords_en": ["volumetric lighting", "volumetric god rays"], "priority": "medium", "tags": ["lighting"]},
+    {"id": "global-illumination", "name_zh": "全局光照", "name_en": "global illumination", "keywords_en": ["realistic global illumination", "ray-traced GI"], "priority": "medium", "tags": ["lighting"]},
+    {"id": "cinematic", "name_zh": "电影感", "name_en": "cinematic", "keywords_en": ["cinematic composition", "cinematic lighting"], "priority": "high"},
+    {"id": "magazine-cover", "name_zh": "杂志封面级", "name_en": "magazine cover quality", "keywords_en": ["magazine cover quality", "Architectural Digest cover", "Kinfolk magazine quality"], "priority": "medium"},
+    {"id": "award-winning", "name_zh": "获奖作品级", "name_en": "award-winning", "keywords_en": ["award-winning interior photography"], "priority": "low"},
+    {"id": "shallow-depth-of-field", "name_zh": "浅景深", "name_en": "shallow depth of field", "keywords_en": ["shallow depth of field", "creamy bokeh"], "priority": "low"},
+    {"id": "natural-color-grading", "name_zh": "自然色彩调色", "name_en": "natural color grading", "keywords_en": ["natural color grading", "no oversaturation"], "priority": "medium"},
+    {"id": "professional-photography", "name_zh": "专业摄影", "name_en": "professional photography", "keywords_en": ["professional interior photography", "editorial photography"], "priority": "high"},
+    {"id": "trending-on-artstation", "name_zh": "ArtStation 趋势", "name_en": "trending on ArtStation", "keywords_en": ["trending on ArtStation"], "priority": "low", "tags": ["render"]},
+    {"id": "hyperrealism", "name_zh": "超现实主义", "name_en": "hyperrealism", "keywords_en": ["hyperrealism"], "priority": "high"},
+    {"id": "key-art", "name_zh": "Key Art 级别", "name_en": "key art", "keywords_en": ["key art quality"], "priority": "low"},
+    {"id": "fine-art-print", "name_zh": "艺术微喷质感", "name_en": "fine art print", "keywords_en": ["fine art archival print quality"], "priority": "low"}
+  ]
+}

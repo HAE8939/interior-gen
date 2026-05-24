@@ -1,0 +1,200 @@
+{
+  "$schema_version": "1.0.0",
+  "category": "composition",
+  "category_zh": "构图与视角",
+  "description": "视角、构图、画幅比例。Prompt 中常作为镜头语言关键词加在开头或结尾。",
+  "perspectives": [
+    {
+      "id": "one-point-perspective",
+      "name_zh": "1 点透视",
+      "name_en": "one-point perspective",
+      "keywords_en": ["one-point perspective", "centered vanishing point", "Wes Anderson symmetry"],
+      "description_zh": "单消失点，居中对称构图。",
+      "category": "perspective",
+      "tags": ["symmetric", "popular"]
+    },
+    {
+      "id": "two-point-perspective",
+      "name_zh": "2 点透视",
+      "name_en": "two-point perspective",
+      "keywords_en": ["two-point perspective", "dual vanishing points", "architectural perspective"],
+      "description_zh": "两个消失点，建筑摄影标准。",
+      "category": "perspective",
+      "tags": ["architecture", "popular"]
+    },
+    {
+      "id": "three-point-perspective",
+      "name_zh": "3 点透视",
+      "name_en": "three-point perspective",
+      "keywords_en": ["three-point perspective", "looking up at tall ceiling", "low-angle architectural shot"],
+      "description_zh": "三点透视，仰拍挑高空间。",
+      "category": "perspective",
+      "tags": ["dramatic"]
+    },
+    {
+      "id": "eye-level",
+      "name_zh": "平视",
+      "name_en": "eye-level shot",
+      "keywords_en": ["eye-level perspective", "human eye-line view"],
+      "description_zh": "人眼视角。",
+      "category": "perspective",
+      "tags": ["natural"]
+    },
+    {
+      "id": "top-down",
+      "name_zh": "俯视",
+      "name_en": "top-down view",
+      "keywords_en": ["top-down bird's-eye view", "overhead flat lay perspective"],
+      "description_zh": "俯视/平铺视角。",
+      "category": "perspective",
+      "tags": ["editorial"]
+    },
+    {
+      "id": "low-angle",
+      "name_zh": "仰视",
+      "name_en": "low-angle shot",
+      "keywords_en": ["low-angle upward view", "dramatic upward perspective"],
+      "description_zh": "仰视，强化挑高感。",
+      "category": "perspective",
+      "tags": ["dramatic"]
+    },
+    {
+      "id": "isometric",
+      "name_zh": "等距视角",
+      "name_en": "isometric view",
+      "keywords_en": ["isometric perspective", "axonometric architectural view"],
+      "description_zh": "等距/轴测，类似建筑图。",
+      "category": "perspective",
+      "tags": ["technical"]
+    },
+    {
+      "id": "fisheye",
+      "name_zh": "鱼眼广角",
+      "name_en": "fisheye wide",
+      "keywords_en": ["fisheye lens distortion", "ultra-wide curved perspective"],
+      "description_zh": "鱼眼畸变效果。",
+      "category": "perspective",
+      "tags": ["dramatic"]
+    }
+  ],
+  "shots": [
+    {
+      "id": "wide-establishing",
+      "name_zh": "全景 / 建立镜头",
+      "name_en": "wide establishing shot",
+      "keywords_en": ["wide establishing shot", "full room overview", "expansive interior view"],
+      "description_zh": "展示整个空间。",
+      "category": "shot_type",
+      "tags": ["overview"]
+    },
+    {
+      "id": "medium-shot",
+      "name_zh": "中景",
+      "name_en": "medium shot",
+      "keywords_en": ["medium shot", "focused area of the room"],
+      "description_zh": "中景，聚焦区域。",
+      "category": "shot_type"
+    },
+    {
+      "id": "close-up-detail",
+      "name_zh": "细节特写",
+      "name_en": "close-up detail",
+      "keywords_en": ["close-up material detail", "extreme close-up texture shot", "macro detail of material finish"],
+      "description_zh": "材质细节特写。",
+      "category": "shot_type",
+      "tags": ["detail"]
+    },
+    {
+      "id": "vignette-arrangement",
+      "name_zh": "局部陈设特写",
+      "name_en": "decor vignette",
+      "keywords_en": ["styled decor vignette", "magazine-style still life arrangement"],
+      "description_zh": "陈列局部小景。",
+      "category": "shot_type",
+      "tags": ["editorial"]
+    }
+  ],
+  "framing": [
+    {
+      "id": "symmetric",
+      "name_zh": "对称构图",
+      "name_en": "symmetric composition",
+      "keywords_en": ["perfect symmetric composition", "mirror symmetry", "balanced symmetric framing"],
+      "description_zh": "完全对称构图。",
+      "category": "framing",
+      "tags": ["popular"]
+    },
+    {
+      "id": "rule-of-thirds",
+      "name_zh": "三分法构图",
+      "name_en": "rule of thirds",
+      "keywords_en": ["rule of thirds composition", "asymmetric balanced framing"],
+      "description_zh": "三分法构图。",
+      "category": "framing"
+    },
+    {
+      "id": "leading-lines",
+      "name_zh": "引导线构图",
+      "name_en": "leading lines",
+      "keywords_en": ["strong leading lines", "diagonal compositional lines"],
+      "description_zh": "利用线条引导视线。",
+      "category": "framing"
+    },
+    {
+      "id": "negative-space",
+      "name_zh": "留白构图",
+      "name_en": "negative space composition",
+      "keywords_en": ["generous negative space", "minimalist composition with empty space"],
+      "description_zh": "大量留白。",
+      "category": "framing",
+      "tags": ["minimalism"]
+    }
+  ],
+  "ratios": [
+    {
+      "id": "1-1",
+      "name_zh": "1:1 方形",
+      "name_en": "1:1 square",
+      "keywords_en": ["--ar 1:1", "square aspect ratio"],
+      "description_zh": "方形，社交媒体常用。",
+      "tags": ["social"]
+    },
+    {
+      "id": "4-3",
+      "name_zh": "4:3",
+      "name_en": "4:3",
+      "keywords_en": ["--ar 4:3", "4:3 aspect ratio"],
+      "description_zh": "4:3，传统比例。"
+    },
+    {
+      "id": "3-2",
+      "name_zh": "3:2",
+      "name_en": "3:2",
+      "keywords_en": ["--ar 3:2", "classic 35mm 3:2 ratio"],
+      "description_zh": "3:2，35mm 经典比例。"
+    },
+    {
+      "id": "16-9",
+      "name_zh": "16:9 横版",
+      "name_en": "16:9 landscape",
+      "keywords_en": ["--ar 16:9", "16:9 widescreen", "cinematic landscape ratio"],
+      "description_zh": "16:9 横版，电影感。",
+      "tags": ["popular", "cinematic"]
+    },
+    {
+      "id": "9-16",
+      "name_zh": "9:16 竖版",
+      "name_en": "9:16 vertical",
+      "keywords_en": ["--ar 9:16", "9:16 vertical portrait", "mobile vertical aspect"],
+      "description_zh": "9:16 竖版，手机/挑高空间用。",
+      "tags": ["mobile"]
+    },
+    {
+      "id": "2-3",
+      "name_zh": "2:3 竖版",
+      "name_en": "2:3 vertical",
+      "keywords_en": ["--ar 2:3", "2:3 portrait ratio"],
+      "description_zh": "2:3 竖版，杂志感。"
+    }
+  ]
+}

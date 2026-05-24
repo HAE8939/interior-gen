@@ -1,0 +1,249 @@
+{
+  "$schema_version": "1.0.0",
+  "vocabulary_version": "1.0.0",
+  "build_date": "2026-05-24",
+  "name": "Interior Design AI Prompt Vocabulary",
+  "name_zh": "室内设计 AI 提示词词库",
+  "description": "针对室内设计行业的 AI 生图提示词结构化词库。覆盖风格/空间/材质/光影/季节/相机/构图/色彩/氛围/家具/设计师/画质/负向词/模板共 14 类。基于：(1) 北玄 v4.0 视频模板分析；(2) GitHub 三大仓库（awesome-gpt-image-2 / Dalabad / hashmil-stablediffusion-midjourney-prompts）；(3) 室内设计领域专业知识。",
+  "purpose": "供前端表单渲染（标签选择）+ 后端 Prompt 拼接器 + LLM 润色器三方共享同一份结构化数据。",
+  "schema_doc": "./_schema.md",
+  "files": [
+    {
+      "key": "styles",
+      "filename": "styles.json",
+      "name_zh": "设计风格",
+      "name_en": "Design Styles",
+      "item_count": 41,
+      "primary_array_path": "items",
+      "core_fields": ["id", "name_zh", "name_en", "keywords_en", "era", "region", "key_features", "signature_colors", "signature_materials"],
+      "form_role": "single-select primary",
+      "prompt_position": "early (anchor)",
+      "examples": ["modern-minimalist", "japandi", "wabi-sabi", "new-chinese", "mid-century-modern", "modern-luxury", "cream-style", "biophilic", "industrial-loft"]
+    },
+    {
+      "key": "spaces",
+      "filename": "spaces.json",
+      "name_zh": "空间类型",
+      "name_en": "Space Types",
+      "item_count": 32,
+      "primary_array_path": "items",
+      "core_fields": ["id", "name_zh", "name_en", "category", "typical_furniture", "default_ratio"],
+      "form_role": "single-select primary",
+      "prompt_position": "first (subject)",
+      "examples": ["living-room", "bedroom", "kitchen", "bathroom", "home-office", "modern-villa-wood", "double-height-living-room", "cafe", "hotel-lobby"]
+    },
+    {
+      "key": "materials",
+      "filename": "materials.json",
+      "name_zh": "材质",
+      "name_en": "Materials",
+      "item_count": 49,
+      "primary_array_path": "items",
+      "core_fields": ["id", "name_zh", "name_en", "category", "feel"],
+      "form_role": "multi-select (2-5 items)",
+      "prompt_position": "after style",
+      "examples": ["oak-wood", "walnut-wood", "travertine", "marble", "board-formed-concrete", "lime-wash-wall", "raw-linen", "brushed-brass"]
+    },
+    {
+      "key": "lighting",
+      "filename": "lighting.json",
+      "name_zh": "光影模板",
+      "name_en": "Lighting",
+      "item_count": 20,
+      "primary_array_path": "items",
+      "core_fields": ["id", "name_zh", "name_en", "time_of_day", "mood", "preview_prompt_en", "pairs_well_with"],
+      "form_role": "single-select with preview image",
+      "prompt_position": "middle (after materials)",
+      "examples": ["comfortable-sunlight", "soft-natural-light", "afternoon-warm-sun", "night-interior", "dusk-blue-hour", "golden-hour"],
+      "ui_note": "前端建议做'光影预览图'网格选择器，每项使用 preview_prompt_en 预先生成 6-12 张参考图供用户点选。视频中北玄 v4.0 的 6 个光影模板已全部覆盖。"
+    },
+    {
+      "key": "seasons_weather",
+      "filename": "seasons_weather.json",
+      "name_zh": "季节与天气",
+      "name_en": "Seasons & Weather",
+      "item_count": 15,
+      "primary_array_path": "seasons + weather",
+      "core_fields": ["id", "name_zh", "name_en", "keywords_en"],
+      "form_role": "two single-selects",
+      "prompt_position": "alongside lighting",
+      "examples": ["spring", "summer", "autumn", "winter", "sunny", "overcast", "rainy", "sunset", "night"]
+    },
+    {
+      "key": "camera",
+      "filename": "camera.json",
+      "name_zh": "摄影参数",
+      "name_en": "Camera Parameters",
+      "item_count": 28,
+      "primary_array_path": "bodies + lenses + apertures + iso + formats",
+      "core_fields": ["id", "name_zh", "name_en", "type"],
+      "form_role": "multi-section single-selects",
+      "prompt_position": "after composition",
+      "examples": ["sony-a7r5", "hasselblad-x2d", "canon-eos-r5", "wide-angle-24mm", "50mm-prime", "f-2-8", "iso-200"],
+      "ui_note": "前端可设'专业模式'开关，普通用户隐藏相机参数，专业用户展开。"
+    },
+    {
+      "key": "composition",
+      "filename": "composition.json",
+      "name_zh": "构图与视角",
+      "name_en": "Composition & Perspective",
+      "item_count": 22,
+      "primary_array_path": "perspectives + shots + framing + ratios",
+      "core_fields": ["id", "name_zh", "name_en", "category"],
+      "form_role": "single-select perspectives + single-select ratio",
+      "prompt_position": "after camera",
+      "examples": ["one-point-perspective", "two-point-perspective", "eye-level", "wide-shot", "16-9", "1-1", "4-5"]
+    },
+    {
+      "key": "colors",
+      "filename": "colors.json",
+      "name_zh": "色彩与配色",
+      "name_en": "Colors & Palettes",
+      "item_count": 58,
+      "primary_array_path": "single_colors + palettes",
+      "core_fields": ["id", "name_zh", "name_en", "hex", "palette", "mood"],
+      "form_role": "color picker / palette preset selector",
+      "prompt_position": "after materials",
+      "examples": ["warm-beige", "cream-white", "deep-forest-green", "japandi-palette", "modern-luxury-palette", "new-chinese-palette"]
+    },
+    {
+      "key": "moods",
+      "filename": "moods.json",
+      "name_zh": "氛围词",
+      "name_en": "Mood / Atmosphere",
+      "item_count": 21,
+      "primary_array_path": "items",
+      "core_fields": ["id", "name_zh", "name_en", "category", "tags"],
+      "form_role": "multi-select (1-3 items)",
+      "prompt_position": "near end (atmosphere layer)",
+      "examples": ["cozy", "serene", "luxurious", "minimalist", "magazine-editorial", "zen-meditative", "warm-inviting"]
+    },
+    {
+      "key": "furniture",
+      "filename": "furniture.json",
+      "name_zh": "家具与装饰",
+      "name_en": "Furniture & Decor",
+      "item_count": 59,
+      "primary_array_path": "items",
+      "core_fields": ["id", "name_zh", "name_en", "category"],
+      "form_role": "multi-select (3-6 items)",
+      "prompt_position": "after space",
+      "examples": ["sectional-sofa", "coffee-table", "kitchen-island", "pendant-light", "potted-plant", "area-rug"]
+    },
+    {
+      "key": "artists",
+      "filename": "artists.json",
+      "name_zh": "设计师 / 建筑师 / 摄影师",
+      "name_en": "Artists / Designers / Photographers",
+      "item_count": 23,
+      "primary_array_path": "architects + interior_designers + photographers",
+      "core_fields": ["id", "name_zh", "name_en", "discipline", "era", "style_keywords"],
+      "form_role": "optional single/multi-select",
+      "prompt_position": "near end (style anchor)",
+      "examples": ["tadao-ando", "kengo-kuma", "vincent-van-duysen", "axel-vervoordt", "kelly-wearstler", "candida-hofer"]
+    },
+    {
+      "key": "quality_modifiers",
+      "filename": "quality_modifiers.json",
+      "name_zh": "画质修饰词",
+      "name_en": "Quality Modifiers",
+      "item_count": 19,
+      "primary_array_path": "items",
+      "core_fields": ["id", "name_zh", "name_en", "keywords_en", "priority"],
+      "form_role": "multi-select (high priority pre-checked)",
+      "prompt_position": "last (before suffix)",
+      "examples": ["photorealistic", "8k-uhd", "highly-detailed", "cinematic", "octane-render", "magazine-cover"]
+    },
+    {
+      "key": "negative_prompts",
+      "filename": "negative_prompts.json",
+      "name_zh": "负向提示词",
+      "name_en": "Negative Prompts",
+      "item_count": 6,
+      "primary_array_path": "presets",
+      "core_fields": ["name_zh", "description_zh", "keywords_en"],
+      "form_role": "preset group selection (global pre-checked)",
+      "prompt_position": "separate field (or MJ --no suffix)",
+      "examples": ["global", "realism", "architecture", "common_issues", "no-people", "no-clutter"]
+    },
+    {
+      "key": "prompt_templates",
+      "filename": "prompt_templates.json",
+      "name_zh": "完整 Prompt 模板",
+      "name_en": "Full Prompt Templates",
+      "item_count": 14,
+      "primary_array_path": "templates",
+      "core_fields": ["id", "name_zh", "name_en", "template_en", "template_midjourney_suffix", "structure_zh", "target_models"],
+      "form_role": "template selector (advanced mode)",
+      "prompt_position": "wrapper for all other fields",
+      "examples": ["master-universal", "archviz-photoreal", "japandi-residential", "luxury-villa-evening", "new-chinese-residential", "video-template-bohyun-v4"]
+    }
+  ],
+  "totals": {
+    "files": 14,
+    "total_items_approx": 407,
+    "schema_doc": "_schema.md",
+    "languages_supported": ["zh-CN", "en-US"],
+    "target_ai_models": ["midjourney", "flux", "stable-diffusion", "tongyi-wanxiang", "jimeng", "deepseek (polish)", "qwen (polish)"]
+  },
+  "form_default_selection": {
+    "comment_zh": "前端首次进入表单时建议预选的默认值，确保即使用户什么都不选也能拼出可用 Prompt。",
+    "style": "modern-minimalist",
+    "space": "living-room",
+    "lighting": "soft-natural-light",
+    "season": "spring",
+    "weather": "sunny",
+    "camera_body": "sony-a7r5",
+    "camera_lens": "wide-angle-24mm",
+    "camera_aperture": "f-2-8",
+    "camera_iso": "iso-200",
+    "composition_perspective": "two-point-perspective",
+    "composition_shot": "wide-shot",
+    "ratio": "16-9",
+    "quality_modifiers_default": ["photorealistic", "8k-uhd", "highly-detailed", "cinematic"],
+    "negative_default": ["global"],
+    "template": "master-universal"
+  },
+  "sources": [
+    {
+      "type": "video_analysis",
+      "ref": "../gemini-code-1779533478404.json",
+      "description_zh": "北玄室内外设计 AI 生图提示词生成器 v4.0 视频分析。包含 6 大模块结构 + 6 光影模板 + 季节天气矩阵 + 专业相机参数列表。"
+    },
+    {
+      "type": "github_repo",
+      "name": "Dalabad/stable-diffusion-prompt-templates",
+      "url": "https://github.com/Dalabad/stable-diffusion-prompt-templates",
+      "description_zh": "Archviz 室内设计 Prompt 模板集合，提供 'by James McDonald and Joarc Architects' 等关键词。"
+    },
+    {
+      "type": "github_repo",
+      "name": "hashmil/stablediffusion-midjourney-prompts",
+      "url": "https://github.com/hashmil/stablediffusion-midjourney-prompts",
+      "description_zh": "提供词序规则：style → composition → medium → camera → subject → environment → lighting → atmosphere → mood。"
+    },
+    {
+      "type": "github_repo",
+      "name": "awesome-gpt-image-2 / interior design section",
+      "description_zh": "Awesome 列表中的室内设计 Prompt 推荐。"
+    },
+    {
+      "type": "github_repo",
+      "name": "HabtamuFeyera/AI-Interior-Design-Generator",
+      "description_zh": "AI 室内设计生成器项目参考。"
+    },
+    {
+      "type": "domain_knowledge",
+      "description_zh": "室内设计行业风格分类、材质术语、知名设计师名录、专业相机/镜头规格。"
+    }
+  ],
+  "usage_quickstart": {
+    "step_1": "前端读取 index.json 获取所有词库元数据",
+    "step_2": "按 form_default_selection 渲染表单初始值",
+    "step_3": "用户选择/修改 → 收集 form_state 对象（各字段 = id）",
+    "step_4": "后端按 form_state 中每个 id 去对应 JSON 文件取出 keywords_en（或 name_en）",
+    "step_5": "套用 prompt_templates.json 中选定的模板字符串，替换 {{...}} 占位符",
+    "step_6": "调 LLM (DeepSeek / Qwen) 做最终润色：合并去重、翻译 freetext、补齐缺失、限制词数",
+    "step_7": "输出三个产物：英文 Prompt（主）+ 中文版（参考）+ 负向词（独立字段）+ MJ suffix（独立）"
+  }
+}

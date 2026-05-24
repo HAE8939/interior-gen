@@ -1,0 +1,237 @@
+{
+  "$schema_version": "1.0.0",
+  "category": "camera",
+  "category_zh": "摄影参数",
+  "description": "相机机身/镜头/光圈/ISO/格式参数库，对应视频中'相机与技术设置'区块。这些词加进 Prompt 能显著提升真实感。",
+  "bodies": [
+    {
+      "id": "canon-5d-mark-iv",
+      "name_zh": "Canon 5D Mark IV",
+      "name_en": "Canon EOS 5D Mark IV",
+      "keywords_en": ["shot on Canon EOS 5D Mark IV", "Canon 5D Mark IV full-frame"],
+      "description_zh": "全画幅经典机型，色彩浓郁。视频示例机型。",
+      "tags": ["full-frame", "popular"]
+    },
+    {
+      "id": "canon-eos-r5",
+      "name_zh": "Canon EOS R5",
+      "name_en": "Canon EOS R5",
+      "keywords_en": ["shot on Canon EOS R5", "Canon R5 45MP full-frame"],
+      "description_zh": "佳能新一代全画幅微单。",
+      "tags": ["full-frame", "modern"]
+    },
+    {
+      "id": "nikon-z9",
+      "name_zh": "Nikon Z9",
+      "name_en": "Nikon Z9",
+      "keywords_en": ["shot on Nikon Z9", "Nikon Z9 mirrorless full-frame"],
+      "description_zh": "尼康旗舰微单。视频示例机型。",
+      "tags": ["full-frame", "popular"]
+    },
+    {
+      "id": "sony-a7r5",
+      "name_zh": "Sony A7R V",
+      "name_en": "Sony A7R V",
+      "keywords_en": ["shot on Sony A7R V", "Sony A7R5 61MP full-frame mirrorless"],
+      "description_zh": "索尼高像素全画幅微单。视频示例机型。",
+      "tags": ["full-frame", "high-resolution", "popular"]
+    },
+    {
+      "id": "hasselblad-x2d",
+      "name_zh": "Hasselblad X2D 100C",
+      "name_en": "Hasselblad X2D 100C",
+      "keywords_en": ["shot on Hasselblad X2D 100C", "Hasselblad medium format", "Hasselblad natural color science"],
+      "description_zh": "哈苏中画幅，色彩自然、质感最佳。视频示例机型。",
+      "tags": ["medium-format", "luxury"]
+    },
+    {
+      "id": "fujifilm-gfx100",
+      "name_zh": "Fujifilm GFX 100 II",
+      "name_en": "Fujifilm GFX 100 II",
+      "keywords_en": ["shot on Fujifilm GFX 100 II", "Fujifilm GFX medium format", "Fujifilm film simulation"],
+      "description_zh": "富士中画幅，胶片模拟独特色彩。",
+      "tags": ["medium-format"]
+    },
+    {
+      "id": "leica-q3",
+      "name_zh": "Leica Q3",
+      "name_en": "Leica Q3",
+      "keywords_en": ["shot on Leica Q3", "Leica color science", "Leica look"],
+      "description_zh": "徕卡定焦全画幅，独特德味色彩。",
+      "tags": ["luxury"]
+    },
+    {
+      "id": "iphone-15-pro",
+      "name_zh": "iPhone 15 Pro Max",
+      "name_en": "iPhone 15 Pro Max",
+      "keywords_en": ["shot on iPhone 15 Pro Max", "iPhone Pro camera computational photography"],
+      "description_zh": "手机摄影感，HDR 明亮。",
+      "tags": ["mobile", "popular"]
+    }
+  ],
+  "lenses": [
+    {
+      "id": "wide-angle-16mm",
+      "name_zh": "超广角 16mm",
+      "name_en": "16mm ultra-wide",
+      "keywords_en": ["16mm ultra-wide-angle lens", "expansive 16mm field of view"],
+      "description_zh": "超广角，适合小空间放大或建筑外观。",
+      "tags": ["wide", "architecture"]
+    },
+    {
+      "id": "wide-angle-24mm",
+      "name_zh": "广角 24mm",
+      "name_en": "24mm wide-angle",
+      "keywords_en": ["24mm wide-angle lens", "spacious 24mm interior view"],
+      "description_zh": "广角，室内空间标准用焦段。",
+      "tags": ["wide", "popular", "architecture"]
+    },
+    {
+      "id": "standard-35mm",
+      "name_zh": "标准 35mm",
+      "name_en": "35mm lens",
+      "keywords_en": ["35mm prime lens", "35mm natural perspective"],
+      "description_zh": "35mm，接近人眼视角。",
+      "tags": ["standard", "popular"]
+    },
+    {
+      "id": "standard-50mm",
+      "name_zh": "标准 50mm",
+      "name_en": "50mm lens",
+      "keywords_en": ["50mm prime lens", "50mm classic perspective"],
+      "description_zh": "50mm，定焦经典。",
+      "tags": ["standard"]
+    },
+    {
+      "id": "tilt-shift",
+      "name_zh": "移轴镜头",
+      "name_en": "tilt-shift lens",
+      "keywords_en": ["tilt-shift lens for architecture", "vertical perspective correction tilt-shift"],
+      "description_zh": "移轴镜头，建筑摄影专业用。",
+      "tags": ["architecture", "professional"]
+    },
+    {
+      "id": "telephoto-85mm",
+      "name_zh": "长焦 85mm",
+      "name_en": "85mm telephoto",
+      "keywords_en": ["85mm portrait lens", "85mm compressed perspective"],
+      "description_zh": "85mm，压缩感强。",
+      "tags": ["telephoto", "portrait"]
+    },
+    {
+      "id": "macro-100mm",
+      "name_zh": "微距 100mm",
+      "name_en": "100mm macro",
+      "keywords_en": ["100mm macro lens", "extreme close-up macro detail"],
+      "description_zh": "微距镜头，材质细节特写。",
+      "tags": ["macro", "detail"]
+    }
+  ],
+  "apertures": [
+    {
+      "id": "f-1-4",
+      "name_zh": "F/1.4 大光圈",
+      "name_en": "f/1.4",
+      "keywords_en": ["f/1.4 aperture", "extreme shallow depth of field"],
+      "description_zh": "大光圈，浅景深虚化。",
+      "tags": ["shallow-dof"]
+    },
+    {
+      "id": "f-2-8",
+      "name_zh": "F/2.8",
+      "name_en": "f/2.8",
+      "keywords_en": ["f/2.8 aperture", "shallow depth of field"],
+      "description_zh": "F/2.8，常用人像和氛围。",
+      "tags": ["shallow-dof", "popular"]
+    },
+    {
+      "id": "f-5-6",
+      "name_zh": "F/5.6",
+      "name_en": "f/5.6",
+      "keywords_en": ["f/5.6 aperture", "balanced depth of field"],
+      "description_zh": "F/5.6，平衡景深。",
+      "tags": ["balanced"]
+    },
+    {
+      "id": "f-8",
+      "name_zh": "F/8 标准",
+      "name_en": "f/8",
+      "keywords_en": ["f/8 aperture", "sharp throughout"],
+      "description_zh": "F/8，全图清晰，建筑摄影常用。",
+      "tags": ["popular", "architecture"]
+    },
+    {
+      "id": "f-11",
+      "name_zh": "F/11",
+      "name_en": "f/11",
+      "keywords_en": ["f/11 aperture", "deep depth of field sharp"],
+      "description_zh": "F/11，景深极深。",
+      "tags": ["deep-dof", "architecture"]
+    },
+    {
+      "id": "f-16",
+      "name_zh": "F/16 小光圈",
+      "name_en": "f/16",
+      "keywords_en": ["f/16 aperture", "everything in razor-sharp focus"],
+      "description_zh": "F/16，全画面锐利。",
+      "tags": ["deep-dof"]
+    }
+  ],
+  "iso": [
+    {
+      "id": "iso-100",
+      "name_zh": "ISO 100",
+      "name_en": "ISO 100",
+      "keywords_en": ["ISO 100", "clean low-noise image"],
+      "description_zh": "ISO 100，最低噪点。",
+      "tags": ["clean", "popular"]
+    },
+    {
+      "id": "iso-200",
+      "name_zh": "ISO 200",
+      "name_en": "ISO 200",
+      "keywords_en": ["ISO 200"],
+      "description_zh": "ISO 200。"
+    },
+    {
+      "id": "iso-400",
+      "name_zh": "ISO 400",
+      "name_en": "ISO 400",
+      "keywords_en": ["ISO 400"],
+      "description_zh": "ISO 400，室内常用。",
+      "tags": ["popular"]
+    },
+    {
+      "id": "iso-800",
+      "name_zh": "ISO 800",
+      "name_en": "ISO 800",
+      "keywords_en": ["ISO 800"],
+      "description_zh": "ISO 800，弱光使用。"
+    },
+    {
+      "id": "iso-1600",
+      "name_zh": "ISO 1600",
+      "name_en": "ISO 1600",
+      "keywords_en": ["ISO 1600", "slight film grain texture"],
+      "description_zh": "ISO 1600，带轻微胶片颗粒感。",
+      "tags": ["film-look"]
+    }
+  ],
+  "formats": [
+    {
+      "id": "raw",
+      "name_zh": "RAW 格式",
+      "name_en": "RAW",
+      "keywords_en": ["RAW format", "uncompressed RAW capture", "professional RAW workflow"],
+      "description_zh": "未压缩 RAW 格式。专业感关键词。",
+      "tags": ["professional", "popular"]
+    },
+    {
+      "id": "medium-format-print",
+      "name_zh": "中画幅打样",
+      "name_en": "medium-format print",
+      "keywords_en": ["medium-format print quality", "large-format archival print"],
+      "description_zh": "中画幅打样质感。"
+    }
+  ]
+}

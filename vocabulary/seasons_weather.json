@@ -1,0 +1,119 @@
+{
+  "$schema_version": "1.0.0",
+  "category": "seasons_weather",
+  "category_zh": "季节与天气",
+  "description": "季节、天气词条。对应视频中独立的'季节'+'天气'两个二级选项。建议前端做联动（季节 → 推荐天气）。",
+  "seasons": [
+    {
+      "id": "spring",
+      "name_zh": "春",
+      "name_en": "spring",
+      "keywords_en": ["fresh spring atmosphere", "soft spring light", "cherry blossoms outside the window", "tender new green outside"],
+      "description_zh": "春季氛围，新绿、花朵、温柔光线。",
+      "mood": "fresh"
+    },
+    {
+      "id": "summer",
+      "name_zh": "夏",
+      "name_en": "summer",
+      "keywords_en": ["bright summer daylight", "vibrant summer atmosphere", "lush green outside", "high-noon summer sun"],
+      "description_zh": "夏季氛围，强光、浓绿。",
+      "mood": "bright"
+    },
+    {
+      "id": "autumn",
+      "name_zh": "秋",
+      "name_en": "autumn",
+      "keywords_en": ["warm autumn light", "golden fall foliage outside", "amber autumn glow", "crisp autumn afternoon"],
+      "description_zh": "秋季氛围，金黄落叶、暖光。",
+      "mood": "warm"
+    },
+    {
+      "id": "winter",
+      "name_zh": "冬",
+      "name_en": "winter",
+      "keywords_en": ["cold winter light", "snowy winter scene outside", "cool blue winter atmosphere", "frosty window panes"],
+      "description_zh": "冬季氛围，雪景、冷调。",
+      "mood": "cool"
+    }
+  ],
+  "weather": [
+    {
+      "id": "sunny",
+      "name_zh": "晴天",
+      "name_en": "sunny clear sky",
+      "keywords_en": ["clear blue sky", "bright sunshine", "sun-drenched interior"],
+      "description_zh": "晴朗天气。"
+    },
+    {
+      "id": "overcast",
+      "name_zh": "阴天",
+      "name_en": "overcast",
+      "keywords_en": ["overcast cloudy sky", "diffused gray light", "soft cloudy day"],
+      "description_zh": "阴天，漫射光。"
+    },
+    {
+      "id": "rainy",
+      "name_zh": "雨天",
+      "name_en": "rainy",
+      "keywords_en": ["rainy weather", "raindrops on windows", "wet pavement reflections", "drizzling rain outside"],
+      "description_zh": "雨天，玻璃水珠、湿润反光。"
+    },
+    {
+      "id": "partly-cloudy",
+      "name_zh": "多云",
+      "name_en": "partly cloudy",
+      "keywords_en": ["partly cloudy sky", "dappled cloud light", "soft cumulus clouds"],
+      "description_zh": "多云。"
+    },
+    {
+      "id": "sunset",
+      "name_zh": "日落",
+      "name_en": "sunset",
+      "keywords_en": ["sunset glow", "low-angle sunset light", "orange and pink horizon"],
+      "description_zh": "日落时分。"
+    },
+    {
+      "id": "afterglow",
+      "name_zh": "晚霞",
+      "name_en": "afterglow sky",
+      "keywords_en": ["vibrant afterglow sky", "pink and purple sunset clouds", "lingering sunset light"],
+      "description_zh": "晚霞，彩色云层。"
+    },
+    {
+      "id": "dusk",
+      "name_zh": "夕阳",
+      "name_en": "dusk",
+      "keywords_en": ["dusk atmosphere", "fading sunset light", "magic hour"],
+      "description_zh": "夕阳，魔幻时刻。"
+    },
+    {
+      "id": "night",
+      "name_zh": "夜景",
+      "name_en": "night",
+      "keywords_en": ["nighttime", "dark night sky", "city lights at night", "stars outside"],
+      "description_zh": "夜晚。"
+    },
+    {
+      "id": "snowy",
+      "name_zh": "雪天",
+      "name_en": "snowy weather",
+      "keywords_en": ["snowy weather", "falling snowflakes", "snow-covered landscape outside"],
+      "description_zh": "下雪。"
+    },
+    {
+      "id": "foggy",
+      "name_zh": "雾天",
+      "name_en": "foggy",
+      "keywords_en": ["misty foggy atmosphere", "dense morning fog outside", "ethereal mist"],
+      "description_zh": "雾天，朦胧。"
+    },
+    {
+      "id": "custom",
+      "name_zh": "自定义",
+      "name_en": "custom",
+      "keywords_en": [],
+      "description_zh": "用户自定义天气描述，进入自由文本框。"
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "$schema_version": "1.0.0",
+  "category": "artists",
+  "category_zh": "设计师与建筑师参考",
+  "description": "在 Prompt 中加上 'in the style of ___' 或 'by ___' 能显著影响输出风格。本库整理建筑师、室内设计师、摄影师三类。",
+  "architects": [
+    {
+      "id": "tadao-ando",
+      "name_zh": "安藤忠雄",
+      "name_en": "Tadao Ando",
+      "keywords_en": ["in the style of Tadao Ando", "Tadao Ando concrete minimalism"],
+      "discipline": "architect",
+      "era": "contemporary",
+      "style_keywords": ["board-formed concrete", "minimalist geometry", "Japanese zen"],
+      "description_zh": "日本建筑师，清水混凝土大师。"
+    },
+    {
+      "id": "kengo-kuma",
+      "name_zh": "隈研吾",
+      "name_en": "Kengo Kuma",
+      "keywords_en": ["in the style of Kengo Kuma", "Kengo Kuma timber architecture"],
+      "discipline": "architect",
+      "era": "contemporary",
+      "style_keywords": ["wooden lattice", "natural materials", "biophilic"],
+      "description_zh": "日本建筑师，木构与自然融合。"
+    },
+    {
+      "id": "zaha-hadid",
+      "name_zh": "扎哈·哈迪德",
+      "name_en": "Zaha Hadid",
+      "keywords_en": ["in the style of Zaha Hadid", "Zaha Hadid parametric curves"],
+      "discipline": "architect",
+      "era": "contemporary",
+      "style_keywords": ["parametric design", "flowing curves", "futuristic"],
+      "description_zh": "参数化建筑女王。"
+    },
+    {
+      "id": "le-corbusier",
+      "name_zh": "勒·柯布西耶",
+      "name_en": "Le Corbusier",
+      "keywords_en": ["in the style of Le Corbusier", "Corbusier modernist purity"],
+      "discipline": "architect",
+      "era": "modern",
+      "style_keywords": ["modernist purism", "five points of architecture"],
+      "description_zh": "现代主义建筑奠基人。"
+    },
+    {
+      "id": "mies-van-der-rohe",
+      "name_zh": "密斯·凡德罗",
+      "name_en": "Mies van der Rohe",
+      "keywords_en": ["in the style of Mies van der Rohe", "less is more architectural purity"],
+      "discipline": "architect",
+      "era": "modern",
+      "style_keywords": ["less is more", "open plan", "steel and glass"],
+      "description_zh": "'少即是多'的提出者。"
+    },
+    {
+      "id": "frank-lloyd-wright",
+      "name_zh": "弗兰克·劳埃德·赖特",
+      "name_en": "Frank Lloyd Wright",
+      "keywords_en": ["in the style of Frank Lloyd Wright", "organic architecture"],
+      "discipline": "architect",
+      "era": "modern",
+      "style_keywords": ["organic architecture", "prairie school", "natural materials"]
+    },
+    {
+      "id": "luis-barragan",
+      "name_zh": "路易斯·巴拉甘",
+      "name_en": "Luis Barragán",
+      "keywords_en": ["in the style of Luis Barragán", "Barragán saturated color walls"],
+      "discipline": "architect",
+      "era": "modern",
+      "style_keywords": ["saturated color planes", "water and light"],
+      "description_zh": "墨西哥建筑师，色彩与光的诗人。"
+    },
+    {
+      "id": "peter-zumthor",
+      "name_zh": "彼得·卒姆托",
+      "name_en": "Peter Zumthor",
+      "keywords_en": ["in the style of Peter Zumthor", "Zumthor atmospheric architecture"],
+      "discipline": "architect",
+      "era": "contemporary",
+      "style_keywords": ["material poetry", "atmospheric architecture"]
+    },
+    {
+      "id": "john-pawson",
+      "name_zh": "约翰·波森",
+      "name_en": "John Pawson",
+      "keywords_en": ["in the style of John Pawson", "Pawson monastic minimalism"],
+      "discipline": "architect",
+      "era": "contemporary",
+      "style_keywords": ["monastic minimalism", "white architecture"]
+    },
+    {
+      "id": "sou-fujimoto",
+      "name_zh": "藤本壮介",
+      "name_en": "Sou Fujimoto",
+      "keywords_en": ["in the style of Sou Fujimoto"],
+      "discipline": "architect",
+      "era": "contemporary",
+      "style_keywords": ["primitive future", "transparent layers"]
+    }
+  ],
+  "interior_designers": [
+    {
+      "id": "axel-vervoordt",
+      "name_zh": "阿克塞尔·维伍德",
+      "name_en": "Axel Vervoordt",
+      "keywords_en": ["in the style of Axel Vervoordt", "Vervoordt wabi-sabi luxury"],
+      "discipline": "interior_designer",
+      "era": "contemporary",
+      "style_keywords": ["quiet luxury", "wabi-sabi", "patinated surfaces"],
+      "description_zh": "比利时静奢风教父。"
+    },
+    {
+      "id": "vincent-van-duysen",
+      "name_zh": "文森特·凡·杜伊森",
+      "name_en": "Vincent Van Duysen",
+      "keywords_en": ["in the style of Vincent Van Duysen", "Van Duysen tactile minimalism"],
+      "discipline": "interior_designer",
+      "era": "contemporary",
+      "style_keywords": ["tactile minimalism", "warm neutrals"]
+    },
+    {
+      "id": "kelly-wearstler",
+      "name_zh": "凯莉·韦斯勒",
+      "name_en": "Kelly Wearstler",
+      "keywords_en": ["in the style of Kelly Wearstler", "Wearstler glamorous bold interiors"],
+      "discipline": "interior_designer",
+      "era": "contemporary",
+      "style_keywords": ["modern glamour", "bold patterns", "sculptural"]
+    },
+    {
+      "id": "joanna-gaines",
+      "name_zh": "乔安娜·盖恩斯",
+      "name_en": "Joanna Gaines",
+      "keywords_en": ["in the style of Joanna Gaines", "modern farmhouse design"],
+      "discipline": "interior_designer",
+      "era": "contemporary",
+      "style_keywords": ["modern farmhouse", "rustic comfort"]
+    },
+    {
+      "id": "ilse-crawford",
+      "name_zh": "伊尔丝·克劳福德",
+      "name_en": "Ilse Crawford",
+      "keywords_en": ["in the style of Ilse Crawford", "Studioilse human-centric design"],
+      "discipline": "interior_designer",
+      "era": "contemporary",
+      "style_keywords": ["human-centric", "sensory design"]
+    },
+    {
+      "id": "studio-mcgee",
+      "name_zh": "Studio McGee",
+      "name_en": "Studio McGee",
+      "keywords_en": ["in the style of Studio McGee", "Studio McGee modern traditional"],
+      "discipline": "interior_designer",
+      "era": "contemporary",
+      "style_keywords": ["modern traditional American", "neutral palette"]
+    },
+    {
+      "id": "patricia-urquiola",
+      "name_zh": "帕特里夏·乌尔基奥拉",
+      "name_en": "Patricia Urquiola",
+      "keywords_en": ["in the style of Patricia Urquiola"],
+      "discipline": "interior_designer",
+      "era": "contemporary",
+      "style_keywords": ["playful Italian design", "color and texture"]
+    },
+    {
+      "id": "justina-blakeney",
+      "name_zh": "贾斯蒂娜·布莱克尼",
+      "name_en": "Justina Blakeney",
+      "keywords_en": ["in the style of Justina Blakeney Jungalow"],
+      "discipline": "interior_designer",
+      "era": "contemporary",
+      "style_keywords": ["bohemian", "plant-filled", "vibrant"]
+    },
+    {
+      "id": "joseph-dirand",
+      "name_zh": "约瑟夫·迪兰",
+      "name_en": "Joseph Dirand",
+      "keywords_en": ["in the style of Joseph Dirand", "Parisian luxury minimalism"],
+      "discipline": "interior_designer",
+      "era": "contemporary",
+      "style_keywords": ["Parisian luxury", "stone and marble"]
+    }
+  ],
+  "photographers": [
+    {
+      "id": "candida-hofer",
+      "name_zh": "坎迪达·霍弗",
+      "name_en": "Candida Höfer",
+      "keywords_en": ["in the style of Candida Höfer", "Höfer architectural photography symmetry"],
+      "discipline": "photographer",
+      "era": "contemporary",
+      "style_keywords": ["architectural symmetry", "grand interiors"]
+    },
+    {
+      "id": "iwan-baan",
+      "name_zh": "伊万·班",
+      "name_en": "Iwan Baan",
+      "keywords_en": ["in the style of Iwan Baan", "Iwan Baan architectural photography"],
+      "discipline": "photographer",
+      "era": "contemporary",
+      "style_keywords": ["architectural documentary", "life in architecture"]
+    },
+    {
+      "id": "francois-halard",
+      "name_zh": "弗朗索瓦·哈拉尔",
+      "name_en": "François Halard",
+      "keywords_en": ["in the style of François Halard", "Halard interior photography"],
+      "discipline": "photographer",
+      "era": "contemporary",
+      "style_keywords": ["interior photography", "lived-in atmosphere"]
+    },
+    {
+      "id": "james-mcdonald",
+      "name_zh": "詹姆斯·麦克唐纳",
+      "name_en": "James McDonald",
+      "keywords_en": ["by James McDonald and Joarc Architects"],
+      "discipline": "photographer",
+      "era": "contemporary",
+      "style_keywords": ["architectural visualization", "interior rendering"],
+      "description_zh": "Dalabad 模板中提到的视觉建筑师组合关键词，常用于 Archviz Prompt。"
+    }
+  ]
+}

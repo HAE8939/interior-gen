@@ -1,0 +1,12 @@
+{
+  "llm": {
+    "apiKey": "",
+    "baseUrl": "",
+    "model": ""
+  },
+  "imageGen": {
+    "apiKey": "",
+    "baseUrl": "https://api.example.com",
+    "model": "gpt-image-2"
+  }
+}

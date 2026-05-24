@@ -1,0 +1,498 @@
+{
+  "$schema_version": "1.0.0",
+  "category": "materials",
+  "category_zh": "材质",
+  "description": "室内设计材质库，按类目分组。Prompt 中常作为 'featuring [material]' 子句使用，是质感呈现的关键。",
+  "items": [
+    {
+      "id": "oak-wood",
+      "name_zh": "橡木 / 浅橡木",
+      "name_en": "oak wood",
+      "keywords_en": ["natural oak wood", "light oak grain", "white oak finish", "honey-colored oak"],
+      "description_zh": "浅色橡木，北欧/日式/奶油风首选。",
+      "category": "wood",
+      "feel": ["warm", "soft", "matte"],
+      "tags": ["popular", "natural"]
+    },
+    {
+      "id": "walnut-wood",
+      "name_zh": "胡桃木",
+      "name_en": "walnut wood",
+      "keywords_en": ["dark walnut wood", "American walnut grain", "rich walnut finish", "espresso walnut"],
+      "description_zh": "深色胡桃木，中古/新中式/轻奢常用。",
+      "category": "wood",
+      "feel": ["warm", "luxe", "matte"],
+      "tags": ["popular", "luxury"]
+    },
+    {
+      "id": "teak-wood",
+      "name_zh": "柚木",
+      "name_en": "teak wood",
+      "keywords_en": ["solid teak wood", "rich teak grain", "Indonesian teak", "marine-grade teak"],
+      "description_zh": "南洋柚木，中古风、热带风招牌材质。",
+      "category": "wood",
+      "feel": ["warm", "luxe"],
+      "tags": ["natural", "premium"]
+    },
+    {
+      "id": "birch-wood",
+      "name_zh": "桦木",
+      "name_en": "birch wood",
+      "keywords_en": ["pale birch wood", "Finnish birch plywood", "blonde birch finish"],
+      "description_zh": "极浅色桦木，北欧常用。",
+      "category": "wood",
+      "feel": ["warm", "soft"],
+      "tags": ["natural", "scandinavian"]
+    },
+    {
+      "id": "rosewood",
+      "name_zh": "红木 / 紫檀",
+      "name_en": "rosewood",
+      "keywords_en": ["fine rosewood", "Chinese rosewood furniture", "deep red rosewood grain"],
+      "description_zh": "中式古典名贵木材。",
+      "category": "wood",
+      "feel": ["warm", "luxe"],
+      "tags": ["traditional", "asian", "luxury"]
+    },
+    {
+      "id": "reclaimed-wood",
+      "name_zh": "回收木 / 做旧木",
+      "name_en": "reclaimed wood",
+      "keywords_en": ["reclaimed barn wood", "weathered timber planks", "vintage distressed wood"],
+      "description_zh": "做旧木板，工业风/农舍风必备。",
+      "category": "wood",
+      "feel": ["raw", "warm"],
+      "tags": ["industrial", "rustic"]
+    },
+    {
+      "id": "burl-wood",
+      "name_zh": "树瘤木",
+      "name_en": "burl wood",
+      "keywords_en": ["rare burl wood veneer", "swirling burl wood grain", "high-end burl finish"],
+      "description_zh": "树瘤纹理木，顶级豪宅家具用材。",
+      "category": "wood",
+      "feel": ["luxe", "warm", "glossy"],
+      "tags": ["luxury"]
+    },
+    {
+      "id": "shou-sugi-ban",
+      "name_zh": "烧杉板 / 焦木",
+      "name_en": "Shou Sugi Ban charred wood",
+      "keywords_en": ["Shou Sugi Ban charred wood cladding", "burnt cedar finish", "Japanese yakisugi"],
+      "description_zh": "日本传统烧炭木，2026 Japandi 趋势。",
+      "category": "wood",
+      "feel": ["raw", "warm"],
+      "tags": ["trending-2026", "asian"]
+    },
+    {
+      "id": "marble",
+      "name_zh": "大理石",
+      "name_en": "marble",
+      "keywords_en": ["Carrara marble", "Calacatta marble with dramatic veining", "polished marble slab"],
+      "description_zh": "经典大理石，含卡拉拉、卡拉卡塔等。",
+      "category": "stone",
+      "feel": ["cold", "luxe", "glossy"],
+      "tags": ["luxury", "popular"]
+    },
+    {
+      "id": "book-matched-marble",
+      "name_zh": "对纹大理石",
+      "name_en": "book-matched marble",
+      "keywords_en": ["book-matched marble feature wall", "mirror-matched marble veining", "statement marble slab"],
+      "description_zh": "镜像拼接大理石，豪宅背景墙常用。",
+      "category": "stone",
+      "feel": ["cold", "luxe", "glossy"],
+      "tags": ["luxury"]
+    },
+    {
+      "id": "travertine",
+      "name_zh": "洞石 / 米黄石",
+      "name_en": "travertine",
+      "keywords_en": ["honed travertine", "warm travertine slab", "natural travertine surface"],
+      "description_zh": "2026 趋势材质，温暖大地色调。",
+      "category": "stone",
+      "feel": ["warm", "matte", "raw"],
+      "tags": ["trending-2026", "natural"]
+    },
+    {
+      "id": "limestone",
+      "name_zh": "石灰石",
+      "name_en": "limestone",
+      "keywords_en": ["French limestone floor", "honed limestone wall", "ivory limestone surface"],
+      "description_zh": "高端石材，静奢风偏爱。",
+      "category": "stone",
+      "feel": ["warm", "matte"],
+      "tags": ["luxury", "natural"]
+    },
+    {
+      "id": "terrazzo",
+      "name_zh": "特拉佐 / 水磨石",
+      "name_en": "terrazzo",
+      "keywords_en": ["terrazzo flooring", "colorful terrazzo aggregate", "polished terrazzo surface"],
+      "description_zh": "水磨石，孟菲斯/现代复古风格常用。",
+      "category": "stone",
+      "feel": ["cold", "glossy"],
+      "tags": ["trendy", "playful"]
+    },
+    {
+      "id": "concrete",
+      "name_zh": "水泥",
+      "name_en": "polished concrete",
+      "keywords_en": ["polished concrete floor", "exposed concrete wall", "raw concrete texture"],
+      "description_zh": "工业风/极简的核心材质。",
+      "category": "stone",
+      "feel": ["cold", "raw"],
+      "tags": ["industrial", "modern"]
+    },
+    {
+      "id": "micro-cement",
+      "name_zh": "微水泥",
+      "name_en": "microcement",
+      "keywords_en": ["microcement wall finish", "seamless cement plaster", "tadelakt microcement"],
+      "description_zh": "微水泥，无缝整体感，侘寂/极简首选。",
+      "category": "stone",
+      "feel": ["raw", "matte"],
+      "tags": ["trending", "modern"]
+    },
+    {
+      "id": "raw-plaster",
+      "name_zh": "原始抹灰墙 / 艺术涂料",
+      "name_en": "raw plaster wall",
+      "keywords_en": ["raw plaster wall texture", "Venetian plaster", "tactile lime plaster finish"],
+      "description_zh": "手工抹灰墙，肌理感。",
+      "category": "stone",
+      "feel": ["raw", "matte", "warm"],
+      "tags": ["trending-2026", "tactile"]
+    },
+    {
+      "id": "lime-wash-wall",
+      "name_zh": "石灰墙",
+      "name_en": "lime wash wall",
+      "keywords_en": ["lime wash painted wall", "soft cloudy lime wash texture", "chalky lime finish"],
+      "description_zh": "石灰漆，雾面云朵感肌理。",
+      "category": "stone",
+      "feel": ["matte", "soft", "warm"],
+      "tags": ["trending-2026"]
+    },
+    {
+      "id": "raw-clay",
+      "name_zh": "原始陶土",
+      "name_en": "raw clay",
+      "keywords_en": ["raw clay wall", "handmade clay surface", "earthen clay plaster"],
+      "description_zh": "天然陶土，侘寂风。",
+      "category": "stone",
+      "feel": ["raw", "warm"],
+      "tags": ["natural", "trending"]
+    },
+    {
+      "id": "exposed-brick",
+      "name_zh": "裸露红砖",
+      "name_en": "exposed red brick wall",
+      "keywords_en": ["exposed red brick wall", "vintage brickwork", "industrial brick texture"],
+      "description_zh": "工业风/LOFT 标志。",
+      "category": "stone",
+      "feel": ["raw", "warm"],
+      "tags": ["industrial"]
+    },
+    {
+      "id": "terracotta-tile",
+      "name_zh": "陶土砖",
+      "name_en": "terracotta tile",
+      "keywords_en": ["handmade terracotta tile", "saltillo tile floor", "rustic clay tile"],
+      "description_zh": "陶土地砖，地中海/南欧风。",
+      "category": "ceramic",
+      "feel": ["warm", "matte"],
+      "tags": ["mediterranean", "natural"]
+    },
+    {
+      "id": "zellige-tile",
+      "name_zh": "Zellige 摩洛哥手工砖",
+      "name_en": "Zellige tile",
+      "keywords_en": ["handmade Zellige tile", "Moroccan ceramic tile", "glazed Zellige with irregular surface"],
+      "description_zh": "摩洛哥手工瓷砖，光泽不均的质感。",
+      "category": "ceramic",
+      "feel": ["glossy", "warm"],
+      "tags": ["trending-2026", "artisan"]
+    },
+    {
+      "id": "porcelain-tile",
+      "name_zh": "瓷砖 / 大板砖",
+      "name_en": "large-format porcelain tile",
+      "keywords_en": ["large-format porcelain tile floor", "seamless porcelain slab", "matte porcelain finish"],
+      "description_zh": "现代瓷砖，大板尺度。",
+      "category": "ceramic",
+      "feel": ["cold", "matte"],
+      "tags": ["modern"]
+    },
+    {
+      "id": "brass",
+      "name_zh": "黄铜 / 抛光黄铜",
+      "name_en": "polished brass",
+      "keywords_en": ["polished brass accent", "antique brass fixture", "warm brass hardware"],
+      "description_zh": "黄铜五金，轻奢/Art Deco/复古都用。",
+      "category": "metal",
+      "feel": ["warm", "luxe", "glossy"],
+      "tags": ["luxury", "popular"]
+    },
+    {
+      "id": "patinated-bronze",
+      "name_zh": "做旧青铜",
+      "name_en": "patinated bronze",
+      "keywords_en": ["patinated bronze fixture", "aged bronze finish", "verdigris bronze"],
+      "description_zh": "做旧青铜，静奢风/古典感。",
+      "category": "metal",
+      "feel": ["warm", "luxe", "matte"],
+      "tags": ["luxury"]
+    },
+    {
+      "id": "brushed-steel",
+      "name_zh": "拉丝不锈钢",
+      "name_en": "brushed stainless steel",
+      "keywords_en": ["brushed stainless steel", "satin steel finish", "industrial steel surface"],
+      "description_zh": "拉丝钢，现代/工业风。",
+      "category": "metal",
+      "feel": ["cold", "matte"],
+      "tags": ["modern", "industrial"]
+    },
+    {
+      "id": "blackened-steel",
+      "name_zh": "黑铁 / 哑光黑钢",
+      "name_en": "blackened steel",
+      "keywords_en": ["blackened steel frame", "matte black metal", "powder-coated black steel"],
+      "description_zh": "黑色钢架，工业/现代/极简通用。",
+      "category": "metal",
+      "feel": ["cold", "matte"],
+      "tags": ["modern", "popular"]
+    },
+    {
+      "id": "chrome",
+      "name_zh": "铬合金",
+      "name_en": "chrome",
+      "keywords_en": ["polished chrome", "mirror chrome finish", "high-gloss chrome"],
+      "description_zh": "高反光金属，未来感/Art Deco。",
+      "category": "metal",
+      "feel": ["cold", "glossy"],
+      "tags": ["futuristic", "retro"]
+    },
+    {
+      "id": "linen",
+      "name_zh": "亚麻",
+      "name_en": "linen",
+      "keywords_en": ["natural linen fabric", "rumpled linen upholstery", "European flax linen"],
+      "description_zh": "亚麻布，自然感、Japandi/侘寂必备。",
+      "category": "fabric",
+      "feel": ["soft", "warm", "matte"],
+      "tags": ["natural", "popular"]
+    },
+    {
+      "id": "boucle",
+      "name_zh": "羊羔绒 / 圈圈纱",
+      "name_en": "boucle fabric",
+      "keywords_en": ["boucle upholstery", "creamy boucle armchair", "textured wool boucle"],
+      "description_zh": "近年大热的羊羔绒材质，奶油风/暖极简首选。",
+      "category": "fabric",
+      "feel": ["soft", "warm"],
+      "tags": ["trending-2026", "popular"]
+    },
+    {
+      "id": "velvet",
+      "name_zh": "天鹅绒",
+      "name_en": "velvet",
+      "keywords_en": ["plush velvet upholstery", "rich emerald velvet", "deep jewel-tone velvet"],
+      "description_zh": "丝绒，轻奢/Art Deco/Maximalism 用。",
+      "category": "fabric",
+      "feel": ["soft", "luxe", "glossy"],
+      "tags": ["luxury", "popular"]
+    },
+    {
+      "id": "silk",
+      "name_zh": "真丝",
+      "name_en": "silk",
+      "keywords_en": ["raw silk drapery", "lustrous silk fabric", "hand-woven silk"],
+      "description_zh": "真丝，东方风/古典风。",
+      "category": "fabric",
+      "feel": ["soft", "luxe", "glossy"],
+      "tags": ["luxury", "asian"]
+    },
+    {
+      "id": "wool-rug",
+      "name_zh": "羊毛地毯",
+      "name_en": "wool rug",
+      "keywords_en": ["hand-tufted wool rug", "thick wool area rug", "Berber wool carpet"],
+      "description_zh": "羊毛地毯，北欧/中古/客厅核心元素。",
+      "category": "fabric",
+      "feel": ["soft", "warm"],
+      "tags": ["natural", "popular"]
+    },
+    {
+      "id": "kilim-rug",
+      "name_zh": "基里姆 / 波西米亚地毯",
+      "name_en": "kilim rug",
+      "keywords_en": ["vintage kilim rug", "Persian tribal rug", "geometric flat-weave kilim"],
+      "description_zh": "波斯/中东编织地毯，Boho 风必备。",
+      "category": "fabric",
+      "feel": ["warm", "matte"],
+      "tags": ["boho", "vintage"]
+    },
+    {
+      "id": "leather",
+      "name_zh": "皮革",
+      "name_en": "leather",
+      "keywords_en": ["full-grain leather", "aged cognac leather Chesterfield", "saddle leather upholstery"],
+      "description_zh": "真皮，中古/美式/暗黑学院。",
+      "category": "fabric",
+      "feel": ["warm", "luxe"],
+      "tags": ["luxury", "popular"]
+    },
+    {
+      "id": "rattan",
+      "name_zh": "藤编",
+      "name_en": "rattan",
+      "keywords_en": ["natural rattan furniture", "woven rattan chair", "Indonesian rattan weave"],
+      "description_zh": "藤编，Boho/热带/田园。",
+      "category": "plant",
+      "feel": ["warm", "matte"],
+      "tags": ["natural", "boho"]
+    },
+    {
+      "id": "bamboo",
+      "name_zh": "竹",
+      "name_en": "bamboo",
+      "keywords_en": ["bamboo screen", "bamboo flooring", "natural bamboo accent"],
+      "description_zh": "竹材，东方/热带/可持续。",
+      "category": "plant",
+      "feel": ["warm", "matte"],
+      "tags": ["asian", "sustainable"]
+    },
+    {
+      "id": "tempered-glass",
+      "name_zh": "钢化玻璃",
+      "name_en": "tempered glass",
+      "keywords_en": ["floor-to-ceiling tempered glass", "frameless glass partition", "crystal clear glass"],
+      "description_zh": "大尺度玻璃，落地窗/隔断。",
+      "category": "glass",
+      "feel": ["cold", "glossy"],
+      "tags": ["modern"]
+    },
+    {
+      "id": "smoked-glass",
+      "name_zh": "灰玻 / 茶玻",
+      "name_en": "smoked glass",
+      "keywords_en": ["smoked glass panel", "bronze tinted glass", "tinted gray glass"],
+      "description_zh": "灰色/茶色玻璃，轻奢/现代。",
+      "category": "glass",
+      "feel": ["cold", "glossy"],
+      "tags": ["luxury", "modern"]
+    },
+    {
+      "id": "fluted-glass",
+      "name_zh": "长虹玻璃 / 棱纹玻璃",
+      "name_en": "fluted ribbed glass",
+      "keywords_en": ["fluted ribbed glass partition", "reeded glass texture", "vertical fluted glass"],
+      "description_zh": "近年大热的棱纹玻璃，半透感。",
+      "category": "glass",
+      "feel": ["cold", "glossy"],
+      "tags": ["trending", "modern"]
+    },
+    {
+      "id": "tatami",
+      "name_zh": "榻榻米",
+      "name_en": "tatami mat",
+      "keywords_en": ["tatami flooring", "traditional tatami mats", "Japanese woven straw mat"],
+      "description_zh": "日式榻榻米。",
+      "category": "plant",
+      "feel": ["warm", "soft"],
+      "tags": ["asian", "traditional"]
+    },
+    {
+      "id": "shoji-paper",
+      "name_zh": "障子纸",
+      "name_en": "shoji paper screen",
+      "keywords_en": ["shoji paper sliding door", "translucent shoji screen", "rice paper panels"],
+      "description_zh": "日式障子推拉门。",
+      "category": "plant",
+      "feel": ["soft", "warm"],
+      "tags": ["asian", "traditional"]
+    },
+    {
+      "id": "lacquer",
+      "name_zh": "漆面 / 烤漆",
+      "name_en": "high-gloss lacquer",
+      "keywords_en": ["high-gloss lacquer finish", "deep lacquered surface", "Japanese urushi lacquer"],
+      "description_zh": "高光漆面，Art Deco/极简都用。",
+      "category": "synthetic",
+      "feel": ["glossy", "luxe"],
+      "tags": ["luxury", "modern"]
+    },
+    {
+      "id": "matte-lacquer",
+      "name_zh": "哑光烤漆",
+      "name_en": "matte lacquer",
+      "keywords_en": ["matte lacquer cabinet", "soft-touch matte finish", "powder-coated lacquer"],
+      "description_zh": "哑光漆面橱柜板，现代主流。",
+      "category": "synthetic",
+      "feel": ["matte", "soft"],
+      "tags": ["modern", "popular"]
+    },
+    {
+      "id": "macrame",
+      "name_zh": "马克拉米编织",
+      "name_en": "macrame wall hanging",
+      "keywords_en": ["macrame wall hanging", "knotted cotton fiber art", "bohemian macrame"],
+      "description_zh": "棉绳手工编织，Boho 标志。",
+      "category": "fabric",
+      "feel": ["warm", "soft"],
+      "tags": ["boho", "handmade"]
+    },
+    {
+      "id": "thatch",
+      "name_zh": "茅草顶",
+      "name_en": "thatched roof",
+      "keywords_en": ["thatched palm roof", "tropical thatched ceiling", "alang-alang grass roof"],
+      "description_zh": "热带度假/巴厘岛风。",
+      "category": "plant",
+      "feel": ["warm", "raw"],
+      "tags": ["tropical"]
+    },
+    {
+      "id": "ceramic",
+      "name_zh": "陶瓷",
+      "name_en": "ceramic",
+      "keywords_en": ["handcrafted ceramic vessel", "matte ceramic pottery", "stoneware ceramics"],
+      "description_zh": "手作陶瓷装饰。",
+      "category": "ceramic",
+      "feel": ["matte", "warm"],
+      "tags": ["artisan"]
+    },
+    {
+      "id": "carbon-fiber",
+      "name_zh": "碳纤维",
+      "name_en": "carbon fiber",
+      "keywords_en": ["carbon fiber detailing", "woven carbon fiber accent", "high-tech composite"],
+      "description_zh": "高科技材质，未来感空间。",
+      "category": "synthetic",
+      "feel": ["cold", "matte"],
+      "tags": ["futuristic"]
+    },
+    {
+      "id": "led-strip",
+      "name_zh": "LED 灯带",
+      "name_en": "LED light strip",
+      "keywords_en": ["hidden LED strip lighting", "ambient cove lighting", "recessed LED accent"],
+      "description_zh": "隐藏式灯带，现代空间标配。",
+      "category": "synthetic",
+      "feel": ["cold"],
+      "tags": ["modern"]
+    },
+    {
+      "id": "living-plants",
+      "name_zh": "活体植物 / 绿植",
+      "name_en": "live indoor plants",
+      "keywords_en": ["lush indoor plants", "monstera and fiddle leaf fig", "vertical green wall", "abundant greenery"],
+      "description_zh": "室内绿植，亲生物设计核心。",
+      "category": "plant",
+      "feel": ["warm", "soft"],
+      "tags": ["natural", "trending"]
+    }
+  ]
+}
