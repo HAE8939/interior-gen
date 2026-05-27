@@ -1,0 +1,146 @@
+{
+  "$schema_version": "1.0.0",
+  "category": "edit_instructions",
+  "category_zh": "改图指令词库",
+  "description": "改图（image-to-image editing）场景下的结构化指令词库。包含「改动对象」与「改动方式」两组，用于 EditPromptBuilder 组件拼接改图 prompt。",
+  "edit_targets": [
+    {
+      "id": "wall",
+      "name_zh": "墙面",
+      "name_en": "wall surface",
+      "description_zh": "室内墙面材质、颜色或纹理"
+    },
+    {
+      "id": "floor",
+      "name_zh": "地板",
+      "name_en": "floor",
+      "description_zh": "地板材质、颜色或铺装方式"
+    },
+    {
+      "id": "ceiling",
+      "name_zh": "天花板",
+      "name_en": "ceiling",
+      "description_zh": "天花板造型、材质或灯槽"
+    },
+    {
+      "id": "furniture",
+      "name_zh": "家具",
+      "name_en": "furniture",
+      "description_zh": "沙发、椅子、桌子等大件家具"
+    },
+    {
+      "id": "curtain",
+      "name_zh": "窗帘",
+      "name_en": "curtains and drapes",
+      "description_zh": "窗帘材质、颜色或遮光程度"
+    },
+    {
+      "id": "lighting",
+      "name_zh": "灯光",
+      "name_en": "lighting",
+      "description_zh": "光线氛围、灯具款式或光色"
+    },
+    {
+      "id": "decor",
+      "name_zh": "装饰品",
+      "name_en": "decorative items and accessories",
+      "description_zh": "摆件、植物、画作、抱枕等小件"
+    },
+    {
+      "id": "overall-style",
+      "name_zh": "整体风格",
+      "name_en": "overall design style",
+      "description_zh": "整体设计风格方向的转换"
+    },
+    {
+      "id": "color-scheme",
+      "name_zh": "整体色调",
+      "name_en": "overall color scheme",
+      "description_zh": "全局色彩搭配和色调"
+    },
+    {
+      "id": "window-view",
+      "name_zh": "窗外景观",
+      "name_en": "window view and exterior scenery",
+      "description_zh": "窗外的景色、季节或时段"
+    },
+    {
+      "id": "spatial-scale",
+      "name_zh": "空间感",
+      "name_en": "spatial scale and openness",
+      "description_zh": "开阔感、层高或视觉延伸感"
+    }
+  ],
+  "edit_actions": [
+    {
+      "id": "replace-material",
+      "name_zh": "替换材质",
+      "name_en": "Replace material",
+      "template_en": "Replace the {target} material with",
+      "hint_zh": "适合：地板换木/石材，墙面换涂料/砖"
+    },
+    {
+      "id": "change-color",
+      "name_zh": "调整颜色",
+      "name_en": "Change color",
+      "template_en": "Change the {target} color to",
+      "hint_zh": "适合：墙面换色，窗帘换色调"
+    },
+    {
+      "id": "change-style",
+      "name_zh": "转换风格",
+      "name_en": "Transform style",
+      "template_en": "Transform the {target} to match",
+      "hint_zh": "适合：整体风格切换，如极简→日式"
+    },
+    {
+      "id": "adjust-lighting",
+      "name_zh": "调整灯光",
+      "name_en": "Adjust lighting",
+      "template_en": "Adjust the {target} to create",
+      "hint_zh": "适合：改变光线氛围，如日光→黄昏"
+    },
+    {
+      "id": "add-element",
+      "name_zh": "添加元素",
+      "name_en": "Add element",
+      "template_en": "Add",
+      "hint_zh": "适合：添加植物、装饰品、地毯等"
+    },
+    {
+      "id": "remove-element",
+      "name_zh": "移除元素",
+      "name_en": "Remove element",
+      "template_en": "Remove the {target} from the scene,",
+      "hint_zh": "适合：去掉杂乱物品或不需要的家具"
+    },
+    {
+      "id": "enhance-texture",
+      "name_zh": "增强质感",
+      "name_en": "Enhance texture",
+      "template_en": "Enhance the texture and material quality of the {target}, making it look more",
+      "hint_zh": "适合：让材质更细腻真实，如木纹更清晰"
+    },
+    {
+      "id": "open-space",
+      "name_zh": "增加空间感",
+      "name_en": "Open up space",
+      "template_en": "Make the {target} feel more open, spacious and airy,",
+      "hint_zh": "适合：视觉上扩大空间，增加延伸感"
+    },
+    {
+      "id": "seasonal-change",
+      "name_zh": "切换季节",
+      "name_en": "Change season",
+      "template_en": "Change the {target} to reflect",
+      "hint_zh": "适合：窗外景色换季节，或室内氛围换季"
+    },
+    {
+      "id": "add-warmth",
+      "name_zh": "提升温馨感",
+      "name_en": "Add warmth",
+      "template_en": "Make the scene feel warmer and more inviting by adjusting the {target} with",
+      "hint_zh": "适合：整体氛围更温暖舒适"
+    }
+  ]
+}

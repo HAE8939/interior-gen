@@ -164,6 +164,17 @@
       "template_en": "Interior design photograph of a modern wood-clad villa nestled in a forest, double-height living room with floor-to-ceiling windows, warm oak wood paneling throughout, board-formed concrete fireplace, plush low-profile sectional sofa in oatmeal linen, large jute area rug, sculptural floor lamp, abundant natural daylight pouring through tall windows revealing forest view, comfortable sunlight, spring afternoon, shot on Hasselblad X2D 100C with 38mm lens at f/4 ISO 200, two-point perspective wide shot, cozy intimate atmosphere, biophilic warmth, serene tranquil, in the style of Tadao Ando and Vincent Van Duysen, photorealistic, 8K UHD resolution, highly detailed, cinematic composition, magazine editorial quality Architectural Digest cover",
       "template_midjourney_suffix": " --ar 16:9 --style raw --v 6.1 --no people, clutter, distortion",
       "example_output_en": "Same as template_en + suffix"
+    },
+    {
+      "id": "white-model-materialization",
+      "name_zh": "白膜赋材",
+      "name_en": "White Model Materialization",
+      "description_zh": "将 3D 白模渲染图（灰白无纹理建模截图）转化为真实室内效果图。严格保留空间结构和比例，赋予材质/配色/光照。适用于方案阶段快速出图。",
+      "target_models": ["gpt-image-2", "flux", "stable-diffusion"],
+      "structure_zh": "转化指令 → 保留空间结构 → 设计风格 → 材质 → 配色 → 光照 → 摄影参数 → 画质",
+      "template_en": "Photorealistic interior design visualization. Transform this architectural white model render into a fully materialized interior scene. Strictly preserve all spatial proportions, structural geometry, furniture placement, and architectural layout exactly as shown in the reference image. Apply {{style.keywords_en|join:', '}} design aesthetic. Wall and floor materials: {{materials.keywords_en|join:', '}}. Color palette: {{colors.keywords_en|join:', '}}. Lighting: {{lighting.keywords_en|join:', '}}, {{season.keywords_en}} {{weather.keywords_en}} atmosphere. [[Camera: {{camera.body.name_en}}, {{camera.lens.name_en}}, f/{{camera.aperture.name_en}}, ISO {{camera.iso.name_en}}. ]]Photorealistic architectural visualization, 8K resolution, highly detailed material surfaces, professional interior design photography.",
+      "template_midjourney_suffix": " --ar {{ratio.mj_param}} --style raw --v 6.1",
+      "example_output_en": "Photorealistic interior design visualization. Transform this architectural white model render into a fully materialized interior scene. Strictly preserve all spatial proportions, structural geometry, furniture placement, and architectural layout exactly as shown in the reference image. Apply japandi, warm minimalism, wabi-sabi design aesthetic. Wall and floor materials: white oak wood, lime wash wall, natural stone. Color palette: warm beige, cream, soft grey. Lighting: soft diffused natural daylight, spring morning atmosphere. Camera: Sony A7R V, 24mm wide-angle, f/2.8, ISO 200. Photorealistic architectural visualization, 8K resolution, highly detailed material surfaces, professional interior design photography. --ar 16:9 --style raw --v 6.1"
     }
   ],
   "assembly_rules": {

@@ -35,6 +35,10 @@ export async function POST(req: NextRequest) {
       { status: res.status },
     );
   }
+  if (!text.trim()) {
+    console.error("[edit] 上游 API 返回了空响应体");
+    return NextResponse.json({ error: "上游 API 返回了空响应体" }, { status: 502 });
+  }
 
   return new NextResponse(text, {
     status: 200,

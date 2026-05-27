@@ -22,6 +22,7 @@ import artistsData from "@vocab/artists.json";
 import qualityModifiersData from "@vocab/quality_modifiers.json";
 import negativePromptsData from "@vocab/negative_prompts.json";
 import promptTemplatesData from "@vocab/prompt_templates.json";
+import editInstructionsData from "@vocab/edit_instructions.json";
 import indexData from "@vocab/index.json";
 
 import type {
@@ -121,6 +122,29 @@ const negativePresets = (negativePromptsData as unknown as {
   presets: Record<string, NegativePreset>;
 }).presets;
 
+// Edit instructions vocab
+export interface EditTarget {
+  id: string;
+  name_zh: string;
+  name_en: string;
+  description_zh?: string;
+}
+export interface EditAction {
+  id: string;
+  name_zh: string;
+  name_en: string;
+  template_en: string;
+  hint_zh?: string;
+}
+const editInstructionsGroups = editInstructionsData as unknown as {
+  edit_targets: EditTarget[];
+  edit_actions: EditAction[];
+};
+const editInstructions = {
+  targets: editInstructionsGroups.edit_targets,
+  actions: editInstructionsGroups.edit_actions,
+};
+
 const templates = (promptTemplatesData as unknown as {
   templates: PromptTemplate[];
 }).templates;
@@ -213,6 +237,7 @@ export const vocab = {
   qualityModifiers,
   negativePresets,
   templates,
+  editInstructions,
 } as const;
 
 export const vocabMeta = {

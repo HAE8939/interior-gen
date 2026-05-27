@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Noto_Sans_SC, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { ErrorLogProvider } from "@/lib/error-log-context";
+import { FormProvider } from "@/lib/form-context";
+import { SettingsProvider } from "@/lib/settings-context";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -39,7 +42,13 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        {children}
+        <ErrorLogProvider>
+          <SettingsProvider>
+            <FormProvider>
+              {children}
+            </FormProvider>
+          </SettingsProvider>
+        </ErrorLogProvider>
       </body>
     </html>
   );

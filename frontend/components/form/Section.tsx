@@ -6,6 +6,8 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 
 interface SectionProps {
+  /** HTML id for anchor / scroll navigation */
+  id?: string;
   title: string;
   /** sub-title under title */
   subtitle?: string;
@@ -21,6 +23,7 @@ interface SectionProps {
 }
 
 export function Section({
+  id,
   title,
   subtitle,
   badge,
@@ -34,7 +37,11 @@ export function Section({
   if (hidden) return null;
 
   return (
-    <section className="rounded-2xl border border-border/60 bg-card/80 shadow-sm overflow-hidden">
+    <section
+      id={id}
+      style={{ scrollMarginTop: "calc(var(--config-bar-height, 0px) + 3.5rem + 2.75rem + 8px)" }}
+      className="rounded-2xl border border-border/60 bg-card/80 shadow-sm overflow-hidden"
+    >
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}

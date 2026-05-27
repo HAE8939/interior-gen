@@ -1,0 +1,199 @@
+{
+  "$schema_version": "1.0.0",
+  "category": "scene_presets",
+  "category_zh": "场景灵感预设",
+  "description": "一键套用的完整场景预设，点击即填充表单主要字段。适合快速启动或作为创作起点。",
+  "presets": [
+    {
+      "id": "tokyo-japandi-morning",
+      "name_zh": "东京晨光 · Japandi",
+      "name_en": "Tokyo Morning Japandi",
+      "emoji": "🌅",
+      "color_from": "#fef3c7",
+      "color_to": "#fde68a",
+      "description_zh": "清晨阳光穿过纸质障子，低矮橡木家具，侘寂宁静",
+      "form_values": {
+        "template": "japandi-residential",
+        "style": "japandi",
+        "space": "living-room",
+        "lighting": "morning-glow",
+        "season": "spring",
+        "weather": "sunny",
+        "mood": ["serene", "zen-meditative"],
+        "materials": ["oak-wood", "linen", "washi-paper"],
+        "ratio": "16-9"
+      }
+    },
+    {
+      "id": "paris-haussmann-dusk",
+      "name_zh": "巴黎黄昏 · 奥斯曼",
+      "name_en": "Paris Haussmann Dusk",
+      "emoji": "🗼",
+      "color_from": "#fce7f3",
+      "color_to": "#fbcfe8",
+      "description_zh": "人字拼地板、石膏线、古铜五金，黄昏暖光从落地窗透入",
+      "form_values": {
+        "template": "master-universal",
+        "style": "french-modern",
+        "space": "living-room",
+        "lighting": "golden-hour",
+        "season": "autumn",
+        "weather": "sunny",
+        "mood": ["elegant", "romantic"],
+        "ratio": "16-9"
+      }
+    },
+    {
+      "id": "art-deco-glamour-night",
+      "name_zh": "Art Deco · 夜间奢华",
+      "name_en": "Art Deco Night Glamour",
+      "emoji": "✦",
+      "color_from": "#fdf2f8",
+      "color_to": "#f5d0fe",
+      "description_zh": "几何对称、天鹅绒、黄铜、大理石，室内夜间氛围灯光",
+      "form_values": {
+        "template": "luxury-villa-evening",
+        "style": "art-deco",
+        "space": "living-room",
+        "lighting": "candlelight-ambient",
+        "season": "winter",
+        "weather": "snowy",
+        "mood": ["luxurious", "dramatic"],
+        "ratio": "16-9"
+      }
+    },
+    {
+      "id": "bali-resort-tropical",
+      "name_zh": "巴厘岛 · 度假泳池",
+      "name_en": "Bali Resort Tropical",
+      "emoji": "🌴",
+      "color_from": "#d1fae5",
+      "color_to": "#a7f3d0",
+      "description_zh": "开放式天花、柚木家具、热带绿植、泳池侧景，度假氛围",
+      "form_values": {
+        "template": "outdoor-courtyard",
+        "style": "tropical",
+        "space": "outdoor-pool",
+        "lighting": "comfortable-sunshine",
+        "season": "summer",
+        "weather": "sunny",
+        "mood": ["fresh-airy", "warm-inviting"],
+        "ratio": "16-9"
+      }
+    },
+    {
+      "id": "dark-academia-library",
+      "name_zh": "暗黑学院 · 图书室",
+      "name_en": "Dark Academia Library",
+      "emoji": "📚",
+      "color_from": "#fef9c3",
+      "color_to": "#fef08a",
+      "description_zh": "满墙皮面书籍、柴斯菲尔德沙发、铜台灯、壁炉，神秘低调",
+      "form_values": {
+        "template": "master-universal",
+        "style": "dark-academia",
+        "space": "study",
+        "lighting": "side-window-rembrandt",
+        "season": "autumn",
+        "weather": "overcast",
+        "mood": ["moody", "patina-aged"],
+        "ratio": "4-5"
+      }
+    },
+    {
+      "id": "nordic-cafe-overcast",
+      "name_zh": "北欧咖啡馆 · 阴天",
+      "name_en": "Nordic Cafe Overcast",
+      "emoji": "☕",
+      "color_from": "#f0f9ff",
+      "color_to": "#bae6fd",
+      "description_zh": "白橡木、水磨石地面、漫射窗光、绿植、温柔阴天氛围",
+      "form_values": {
+        "template": "commercial-cafe-restaurant",
+        "style": "scandinavian",
+        "space": "cafe-shop",
+        "lighting": "overcast-soft",
+        "season": "winter",
+        "weather": "cloudy",
+        "mood": ["cozy", "fresh-airy"],
+        "ratio": "4-5"
+      }
+    },
+    {
+      "id": "organic-modern-biophilic",
+      "name_zh": "有机现代 · 绿植疗愈",
+      "name_en": "Organic Modern Biophilic",
+      "emoji": "🌿",
+      "color_from": "#f0fdf4",
+      "color_to": "#bbf7d0",
+      "description_zh": "弧线家具、洞石、泡泡椅、大叶植物，温柔自然大地色",
+      "form_values": {
+        "template": "master-universal",
+        "style": "organic-modern",
+        "space": "living-room",
+        "lighting": "skylight-from-above",
+        "season": "spring",
+        "weather": "sunny",
+        "mood": ["serene", "fresh-airy"],
+        "ratio": "1-1"
+      }
+    },
+    {
+      "id": "quiet-luxury-bedroom",
+      "name_zh": "静奢卧室 · 奶白晨光",
+      "name_en": "Quiet Luxury Bedroom",
+      "emoji": "🛏",
+      "color_from": "#fafaf9",
+      "color_to": "#f5f5f4",
+      "description_zh": "顶级亚麻床品、石灰粉墙、薄遮光帘、清晨柔光，安静奢华",
+      "form_values": {
+        "template": "bedroom-cozy",
+        "style": "quiet-luxury",
+        "space": "master-bedroom",
+        "lighting": "soft-natural-light",
+        "season": "spring",
+        "weather": "cloudy",
+        "mood": ["serene", "tactile-textural"],
+        "ratio": "4-5"
+      }
+    },
+    {
+      "id": "mountain-cabin-winter",
+      "name_zh": "山地木屋 · 雪日壁炉",
+      "name_en": "Mountain Cabin Winter",
+      "emoji": "🏔",
+      "color_from": "#eff6ff",
+      "color_to": "#dbeafe",
+      "description_zh": "粗犷原木横梁、石砌壁炉、羊毛格毯、窗外雪景，温暖治愈",
+      "form_values": {
+        "template": "master-universal",
+        "style": "rustic-farmhouse",
+        "space": "living-room",
+        "lighting": "fireplace-glow",
+        "season": "winter",
+        "weather": "snowy",
+        "mood": ["cozy", "warm-inviting"],
+        "ratio": "16-9"
+      }
+    },
+    {
+      "id": "cream-style-daylight",
+      "name_zh": "奶油风 · 慵懒午后",
+      "name_en": "Cream Style Afternoon",
+      "emoji": "🤍",
+      "color_from": "#fffbeb",
+      "color_to": "#fef3c7",
+      "description_zh": "奶白色系、羊羔绒圆椅、橡木地板、慵懒暖午后阳光",
+      "form_values": {
+        "template": "master-universal",
+        "style": "cream-style",
+        "space": "living-room",
+        "lighting": "warm-afternoon-sun",
+        "season": "spring",
+        "weather": "sunny",
+        "mood": ["cozy", "warm-inviting"],
+        "ratio": "4-5"
+      }
+    }
+  ]
+}

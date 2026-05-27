@@ -43,7 +43,17 @@ function parseImageResponse(json: ImageApiResponse): { url: string; revisedPromp
 }
 
 async function handleResponse(res: Response): Promise<{ url: string; revisedPrompt?: string }> {
-  const json = (await res.json()) as ImageApiResponse;
+  const text = await res.text();
+  if (!text.trim()) {
+    throw new Error(`上游 API 返回了空响应体 (HTTP ${res.status})，请检查 Base URL / API Key 是否正确`);
+  }
+  let json: ImageApiResponse;
+  try {
+    json = JSON.parse(text) as ImageApiResponse;
+  } catch {
+    // Not JSON — show raw snippet so the user / dev can diagnose
+    throw new Error(`上游 API 响应不是 JSON (HTTP ${res.status}): ${text.slice(0, 300)}`);
+  }
   if (!res.ok) throw new Error(json.error ?? `代理错误 ${res.status}`);
   return parseImageResponse(json);
 }
