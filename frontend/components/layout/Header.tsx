@@ -18,7 +18,7 @@ export function Header() {
           <span className="inline-flex size-7 items-center justify-center rounded-lg bg-primary/10 text-primary shrink-0">
             <Sparkles className="size-4" />
           </span>
-          <h1 className="text-lg font-semibold tracking-tight cn leading-tight">
+          <h1 className="text-base sm:text-lg font-semibold tracking-tight cn leading-tight">
             室内设计 AI 提示词生成器
           </h1>
         </div>

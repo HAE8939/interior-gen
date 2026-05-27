@@ -118,7 +118,7 @@ export function ConfigBar() {
       {/* ── 设置面板 ── */}
       {open && (
         <div
-          className="fixed bottom-20 right-6 z-50 w-[480px] max-h-[80vh] overflow-y-auto rounded-2xl border border-border/60 bg-card shadow-2xl"
+          className="fixed bottom-20 z-50 left-4 right-4 sm:left-auto sm:right-6 sm:w-[480px] max-h-[80vh] overflow-y-auto rounded-2xl border border-border/60 bg-card shadow-2xl"
           role="dialog"
           aria-label="系统设置"
         >
@@ -129,8 +129,10 @@ export function ConfigBar() {
               <p className="text-xs text-muted-foreground cn mt-0.5">配置接口密钥与模型参数</p>
             </div>
             <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1.5 flex-wrap justify-end">
               <StatusPill ok={isLLMConfigured} label={isLLMConfigured ? "LLM 已配置" : "LLM 未配置"} />
               <StatusPill ok={isImageGenConfigured} label={isImageGenConfigured ? "生图 已配置" : "生图 未配置"} />
+              </div>
               <button
                 type="button"
                 onClick={() => setOpen(false)}
@@ -155,7 +157,7 @@ export function ConfigBar() {
                 <Label className="text-[11px] cn">API 密钥</Label>
                 <ApiKeyInput value={settings.llm.apiKey} onChange={(v) => updateLLM({ apiKey: v })} />
               </div>
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 <div className="space-y-1">
                   <Label className="text-[11px] cn">接口地址</Label>
                   <Input
@@ -187,7 +189,7 @@ export function ConfigBar() {
                 <Label className="text-[11px] cn">API 密钥</Label>
                 <ApiKeyInput value={settings.imageGen.apiKey} onChange={(v) => updateImageGen({ apiKey: v })} />
               </div>
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 <div className="space-y-1">
                   <Label className="text-[11px] cn">接口地址</Label>
                   <Input

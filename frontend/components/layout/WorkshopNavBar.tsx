@@ -84,7 +84,7 @@ export function WorkshopNavBar({ activeId, onNavigate }: WorkshopNavBarProps) {
                   onClick={() => onNavigate(item.id)}
                   className={[
                     "relative shrink-0 whitespace-nowrap cn",
-                    "flex items-center px-3 py-2.5",
+                    "flex items-center px-2.5 sm:px-3 py-2.5",
                     "text-xs font-medium transition-colors",
                     isActive
                       ? "text-foreground"

@@ -54,7 +54,7 @@ export default function Home() {
                 key={tab.id}
                 type="button"
                 onClick={() => setActivePage(tab.id)}
-                className={`relative flex items-center gap-2 px-5 py-3.5 text-sm font-medium transition-colors cn ${
+                className={`relative flex items-center gap-1.5 px-4 sm:px-5 py-3.5 text-sm font-medium transition-colors cn ${
                   activePage === tab.id
                     ? "text-foreground"
                     : "text-muted-foreground hover:text-foreground"
@@ -122,7 +122,7 @@ export default function Home() {
         <div className={activePage === "image-studio" ? "block" : "hidden"}>
           <div className="space-y-6">
             <div>
-              <h2 className="text-xl font-semibold tracking-tight cn">生图工作台</h2>
+              <h2 className="text-lg sm:text-xl font-semibold tracking-tight cn">生图工作台</h2>
               <p className="text-sm text-muted-foreground cn mt-1">
                 基于
                 <button

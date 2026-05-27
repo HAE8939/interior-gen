@@ -589,7 +589,7 @@ export function ImageStudio({ onGoToPromptWorkshop }: ImageStudioProps) {
               key={tab.id}
               type="button"
               onClick={() => handleTabChange(tab.id)}
-              className={`relative flex items-center gap-2 px-5 py-3 text-sm font-medium transition-colors cn ${
+              className={`relative flex items-center gap-1.5 px-3 sm:px-5 py-3 text-sm font-medium transition-colors cn ${
                 activeTab === tab.id
                   ? "text-foreground"
                   : "text-muted-foreground hover:text-foreground"
