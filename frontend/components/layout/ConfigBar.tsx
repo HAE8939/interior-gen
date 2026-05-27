@@ -213,7 +213,7 @@ export function ConfigBar() {
             <div className="flex items-center justify-between gap-3">
               <p className="text-[11px] text-muted-foreground cn flex items-center gap-1">
                 <FileJson className="size-3 shrink-0" />
-                密钥保存于本地 api-config.json，已加入 .gitignore
+                密钥仅存于本地，不会上传至云端或代码仓库
               </p>
               <div className="flex flex-col items-end gap-1 shrink-0">
                 {saveError && (
